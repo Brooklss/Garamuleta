@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - GARA Construction</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .admin-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .admin-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .admin-header h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .admin-header p {
+            margin: 0.5rem 0 0 0;
+            opacity: 0.9;
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e0e0e0;
+            flex-wrap: wrap;
+        }
+
+        .admin-tab {
+            padding: 1rem 2rem;
+            background: white;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .admin-tab:hover {
+            color: var(--primary-color);
+            background: #f8f9fa;
+        }
+
+        .admin-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--secondary-color);
+            background: #f8f9fa;
+        }
+
+        .admin-section {
+            display: none;
+        }
+
+        .admin-section.active {
+            display: block;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .admin-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid #e0e0e0;
+        }
+
+        .admin-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .btn-admin {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-admin:hover {
+            background: #b8935a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+        }
+
+        .btn-admin.btn-danger {
+            background: #dc3545;
+        }
+
+        .btn-admin.btn-danger:hover {
+            background: #c82333;
+        }
+
+        .items-list {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid #e0e0e0;
+        }
+
+        .items-list h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            transition: background 0.3s ease;
+        }
+
+        .item-row:hover {
+            background: #f8f9fa;
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .item-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+
+        .item-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .item-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-icon {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 0.5rem;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .btn-icon:hover {
+            background: #f8f9fa;
+        }
+
+        .btn-icon.edit:hover {
+            color: var(--secondary-color);
+        }
+
+        .btn-icon.delete:hover {
+            color: #dc3545;
+        }
+
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            display: none;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .alert.show {
+            display: flex;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .stat-card h3 {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .stat-card .stat-number {
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .feature-input {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-input input {
+            flex: 1;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .admin-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-tabs {
+                overflow-x: auto;
+            }
+
+            .item-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .item-actions {
+                width: 100%;
+                justify-content: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1><i class="fas fa-shield-alt"></i> Admin Dashboard</h1>
+            <p>Manage your website content - Blog Posts & Products</p>
+        </div>
+
+        <div class="alert alert-success" id="successAlert">
+            <i class="fas fa-check-circle"></i>
+            <span id="successMessage"></span>
+        </div>
+
+        <div class="alert alert-error" id="errorAlert">
+            <i class="fas fa-exclamation-circle"></i>
+            <span id="errorMessage"></span>
+        </div>
+
+        <div class="admin-tabs">
+            <button class="admin-tab active" onclick="switchTab('dashboard')">
+                <i class="fas fa-chart-line"></i> Dashboard
+            </button>
+            <button class="admin-tab" onclick="switchTab('blog')">
+                <i class="fas fa-blog"></i> Blog Posts
+            </button>
+            <button class="admin-tab" onclick="switchTab('products')">
+                <i class="fas fa-box"></i> Products
+            </button>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="admin-section active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Blog Posts</h3>
+                    <div class="stat-number" id="totalBlogs">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Products</h3>
+                    <div class="stat-number" id="totalProducts">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Categories</h3>
+                    <div class="stat-number">6</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Last Updated</h3>
+                    <div class="stat-number" style="font-size: 1.2rem;" id="lastUpdated">Today</div>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <h2><i class="fas fa-info-circle"></i> Quick Guide</h2>
+                <ul style="color: var(--text-dark); line-height: 1.8;">
+                    <li><strong>Blog Posts:</strong> Create, edit, and delete blog articles. All posts are stored locally in your browser.</li>
+                    <li><strong>Products:</strong> Add new products with details, features, and images. Manage your product catalog easily.</li>
+                    <li><strong>Auto-Save:</strong> All changes are automatically saved to localStorage.</li>
+                    <li><strong>Images:</strong> Use image URLs from Unsplash or your own hosted images.</li>
+                    <li><strong>Preview:</strong> Changes appear instantly on your live website pages.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Blog Section -->
+        <div id="blog" class="admin-section">
+            <div class="admin-grid">
+                <div class="admin-card">
+                    <h2><i class="fas fa-plus-circle"></i> Add New Blog Post</h2>
+                    <form id="blogForm">
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" id="blogTitle" required placeholder="Enter blog title...">
+                        </div>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="blogCategory" required>
+                                <option value="Industry News">Industry News</option>
+                                <option value="Best Practices">Best Practices</option>
+                                <option value="Product Updates">Product Updates</option>
+                                <option value="Case Studies">Case Studies</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Sustainability">Sustainability</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Excerpt (Short Description)</label>
+                            <textarea id="blogExcerpt" required placeholder="Brief summary of the post..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Content</label>
+                            <textarea id="blogContent" required placeholder="Full blog content..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Featured Image URL</label>
+                            <input type="url" id="blogImage" required placeholder="https://example.com/image.jpg">
+                        </div>
+                        <div class="form-group">
+                            <label>Author</label>
+                            <input type="text" id="blogAuthor" value="GARA Team" required>
+                        </div>
+                        <button type="submit" class="btn-admin">
+                            <i class="fas fa-save"></i> Publish Blog Post
+                        </button>
+                    </form>
+                </div>
+
+                <div class="items-list">
+                    <h2><i class="fas fa-list"></i> All Blog Posts</h2>
+                    <div id="blogList"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Section -->
+        <div id="products" class="admin-section">
+            <div class="admin-grid">
+                <div class="admin-card">
+                    <h2><i class="fas fa-plus-circle"></i> Add New Product</h2>
+                    <form id="productForm">
+                        <div class="form-group">
+                            <label>Product Name</label>
+                            <input type="text" id="productName" required placeholder="Enter product name...">
+                        </div>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="productCategory" required>
+                                <option value="flooring">Flooring</option>
+                                <option value="wall-cladding">Wall Cladding</option>
+                                <option value="ceiling">Ceiling Systems</option>
+                                <option value="sanitary">Sanitary</option>
+                                <option value="paints">Paints</option>
+                                <option value="decorative">Decorative</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea id="productDescription" required placeholder="Product description..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Features (one per line)</label>
+                            <textarea id="productFeatures" required placeholder="Feature 1&#10;Feature 2&#10;Feature 3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Image URL</label>
+                            <input type="url" id="productImage" required placeholder="https://example.com/product.jpg">
+                        </div>
+                        <div class="form-group">
+                            <label>Badge (optional)</label>
+                            <input type="text" id="productBadge" placeholder="e.g., Popular, Premium, New">
+                        </div>
+                        <button type="submit" class="btn-admin">
+                            <i class="fas fa-save"></i> Add Product
+                        </button>
+                    </form>
+                </div>
+
+                <div class="items-list">
+                    <h2><i class="fas fa-list"></i> All Products</h2>
+                    <div id="productList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
