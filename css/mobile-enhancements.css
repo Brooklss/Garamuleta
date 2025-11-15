@@ -1,0 +1,349 @@
+/* ========================================
+   MOBILE-FIRST RESPONSIVE ENHANCEMENTS
+   Add these overrides for better mobile UX
+   ======================================== */
+
+/* Improve touch targets and spacing */
+@media (max-width: 992px) {
+    :root {
+        --spacing-sm: 0.75rem;
+        --spacing-md: 1.5rem;
+        --spacing-lg: 2.5rem;
+        --spacing-xl: 3.5rem;
+    }
+    
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    .section-title {
+        font-size: clamp(1.75rem, 5vw, 2.5rem) !important;
+    }
+    
+    /* Better grid layouts */
+    .stats-grid,
+    .products-grid,
+    .projects-grid,
+    .blog-grid,
+    .team-grid,
+    .certifications-grid,
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)) !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* Card improvements */
+    .product-card,
+    .project-card,
+    .blog-card,
+    .team-member,
+    .cert-card,
+    .feature-card {
+        padding: 1.5rem !important;
+    }
+    
+    /* Form improvements */
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 16px !important; /* Prevents iOS zoom */
+        min-height: 44px !important;
+    }
+    
+    /* Better button spacing */
+    .hero-buttons,
+    .hero-modern-buttons {
+        gap: 1rem !important;
+        width: 100%;
+    }
+    
+    .hero-buttons .btn,
+    .hero-modern-buttons .btn-modern {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Typography adjustments */
+    html {
+        font-size: 15px;
+    }
+    
+    .big-title {
+        font-size: clamp(3rem, 10vw, 4.5rem) !important;
+        line-height: 1 !important;
+    }
+    
+    .hero-modern-title {
+        font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
+    }
+    
+    /* Navigation improvements */
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    .logo span {
+        font-size: 0.7rem !important;
+    }
+    
+    /* Single column layouts */
+    .about-grid,
+    .overview-grid,
+    .company-intro,
+    .mission-vision,
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    /* Better image handling */
+    .product-image,
+    .project-image,
+    .blog-image,
+    .team-image {
+        height: 220px !important;
+        object-fit: cover;
+    }
+    
+    /* Improved spacing */
+    .hero-modern {
+        padding: 3rem 5% 2rem !important;
+        gap: 2rem !important;
+    }
+    
+    .milestones-minimal {
+        padding: 3rem 0 !important;
+    }
+    
+    /* Footer improvements */
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center !important;
+    }
+    
+    /* Banner adjustments */
+    .page-banner {
+        min-height: 40vh !important;
+        padding: 4rem 5% !important;
+    }
+    
+    .banner-title {
+        font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .banner-subtitle {
+        font-size: 1.1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    /* Maximum mobile optimization */
+    .container,
+    .container-wide {
+        padding: 0 1rem !important;
+    }
+    
+    section {
+        padding: 2rem 0 !important;
+    }
+    
+    /* Compact banners */
+    .page-banner {
+        min-height: 35vh !important;
+        padding: 3rem 1rem !important;
+    }
+    
+    .banner-label {
+        font-size: 0.8rem !important;
+        padding: 0.4rem 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .banner-title {
+        font-size: clamp(2rem, 10vw, 2.5rem) !important;
+        line-height: 1.1 !important;
+    }
+    
+    .banner-subtitle {
+        font-size: 1rem !important;
+        padding: 0 1rem;
+    }
+    
+    /* Stack everything */
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    /* Full-width buttons */
+    .btn,
+    .btn-modern {
+        width: 100%;
+        padding: 1rem !important;
+    }
+    
+    .hero-buttons,
+    .hero-modern-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem !important;
+    }
+    
+    /* Smaller stats */
+    .hero-stat-item strong,
+    .stat-number {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Compact cards */
+    .product-item,
+    .timeline-modern-card,
+    .milestone-block {
+        padding: 1rem !important;
+    }
+    
+    /* Better text sizing */
+    .hero-modern-subtitle,
+    .milestone-intro,
+    .section-description {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* Adjust milestones */
+    .milestones-grid {
+        gap: 2rem !important;
+    }
+    
+    .milestone-block {
+        gap: 0.5rem !important;
+    }
+    
+    .year-large {
+        font-size: 1.75rem !important;
+    }
+    
+    .milestone-text {
+        font-size: 0.95rem !important;
+    }
+    
+    /* Product cards */
+    .product-image {
+        height: 200px !important;
+    }
+    
+    .product-info h3 {
+        font-size: 1.15rem !important;
+    }
+    
+    /* Modal improvements */
+    .blog-modal-content {
+        padding: 2rem 1.5rem !important;
+        margin: 1rem;
+    }
+    
+    /* Form improvements */
+    .form-row {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .newsletter-form {
+        flex-direction: column !important;
+        gap: 0.75rem;
+    }
+    
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100% !important;
+    }
+}
+
+/* Landscape mobile fixes */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-modern {
+        min-height: auto !important;
+        padding: 2rem 5% !important;
+    }
+    
+    .hero-modern-image {
+        max-width: 300px !important;
+    }
+    
+    .milestones-grid {
+        min-height: auto !important;
+    }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 992px) {
+    .products-grid,
+    .projects-grid,
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .hero-modern {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+    }
+    
+    .hero-modern-content {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .hero-modern-image {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .btn {
+        border: 2px solid currentColor;
+    }
+    
+    .nav-menu a {
+        text-decoration: underline;
+    }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    /* Keep light theme for now, but prepared for future */
+}
