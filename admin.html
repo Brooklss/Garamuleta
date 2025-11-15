@@ -491,13 +491,13 @@
         </div>
 
         <div class="admin-tabs">
-            <button class="admin-tab active" onclick="switchTab('dashboard')">
+            <button class="admin-tab active" data-tab="dashboard" onclick="switchTab('dashboard')">
                 <i class="fas fa-chart-line"></i> Dashboard
             </button>
-            <button class="admin-tab" onclick="switchTab('blog')">
+            <button class="admin-tab" data-tab="blog" onclick="switchTab('blog')">
                 <i class="fas fa-blog"></i> Blog Posts
             </button>
-            <button class="admin-tab" onclick="switchTab('products')">
+            <button class="admin-tab" data-tab="products" onclick="switchTab('products')">
                 <i class="fas fa-box"></i> Products
             </button>
         </div>
@@ -507,15 +507,15 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <h3>Total Blog Posts</h3>
-                    <div class="stat-number" id="totalBlogs">0</div>
+                    <div class="stat-number" id="blogCount">0</div>
                 </div>
                 <div class="stat-card">
                     <h3>Total Products</h3>
-                    <div class="stat-number" id="totalProducts">0</div>
+                    <div class="stat-number" id="productCount">0</div>
                 </div>
                 <div class="stat-card">
                     <h3>Categories</h3>
-                    <div class="stat-number">6</div>
+                    <div class="stat-number" id="categoryCount">6</div>
                 </div>
                 <div class="stat-card">
                     <h3>Last Updated</h3>
@@ -636,6 +636,13 @@
         </div>
     </div>
 
-    <script src="js/admin.js"></script>
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Supabase Configuration -->
+    <script src="js/supabase-config.js"></script>
+    
+    <!-- Supabase Admin Manager -->
+    <script src="js/supabase-admin.js"></script>
 </body>
 </html>
