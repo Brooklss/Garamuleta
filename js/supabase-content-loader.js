@@ -81,22 +81,28 @@ class SupabaseContentLoader {
         
         if (this.blogs.length === 0) {
             console.warn('No blogs to display');
+            blogContainer.innerHTML = `
+                <div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #999;">
+                    <i class="fas fa-inbox" style="font-size: 3rem; margin-bottom: 1rem; color: #ddd;"></i>
+                    <h3 style="color: #666; margin-bottom: 0.5rem;">No blog posts yet</h3>
+                    <p>Check back soon for new content!</p>
+                </div>
+            `;
             return;
         }
 
         console.log('Found blog container, adding', this.blogs.length, 'blogs');
         
-        // Keep only the first 3 static blogs, then add dynamic ones
-        const staticBlogs = Array.from(blogContainer.children).slice(0, 3);
-        
-        const dynamicBlogsHTML = this.blogs.map(blog => `
+        const dynamicBlogsHTML = this.blogs.map(blog => {
+            console.log('Rendering blog:', blog.title);
+            return `
             <article class="blog-post-card" onclick="viewSupabaseBlogPost(${blog.id})">
                 <div class="post-image">
-                    <img src="${blog.image}" alt="${blog.title}">
-                    <span class="post-category">${blog.category}</span>
+                    <img src="${blog.image || 'images/blog/default.jpg'}" alt="${blog.title || 'Blog Post'}" onerror="this.src='images/blog/post1.jpg'">
+                    <span class="post-category">${blog.category || 'General'}</span>
                 </div>
                 <div class="post-content">
-                    <h3><a href="#" onclick="event.stopPropagation(); viewSupabaseBlogPost(${blog.id}); return false;">${blog.title}</a></h3>
+                    <h3><a href="#" onclick="event.stopPropagation(); viewSupabaseBlogPost(${blog.id}); return false;">${blog.title || 'Untitled Post'}</a></h3>
                     <p class="post-meta">
                         <span><i class="far fa-calendar"></i> ${new Date(blog.created_at).toLocaleDateString('en-US', { 
                             year: 'numeric', 
@@ -106,15 +112,16 @@ class SupabaseContentLoader {
                         <span><i class="far fa-user"></i> ${blog.author || 'Admin'}</span>
                     </p>
                     <p class="post-excerpt">
-                        ${blog.excerpt}
+                        ${blog.excerpt || 'No excerpt available.'}
                     </p>
                     <a href="#" class="read-more" onclick="event.stopPropagation(); viewSupabaseBlogPost(${blog.id}); return false;">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
-        `).join('');
+        `;
+        }).join('');
 
         console.log('Generated HTML for blogs:', dynamicBlogsHTML.substring(0, 200));
-        blogContainer.innerHTML = staticBlogs.map(el => el.outerHTML).join('') + dynamicBlogsHTML;
+        blogContainer.innerHTML = dynamicBlogsHTML;
         console.log('Blogs added to page successfully');
     }
 
