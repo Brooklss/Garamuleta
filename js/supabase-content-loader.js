@@ -90,25 +90,25 @@ class SupabaseContentLoader {
         const staticBlogs = Array.from(blogContainer.children).slice(0, 3);
         
         const dynamicBlogsHTML = this.blogs.map(blog => `
-            <article class="blog-post-card">
+            <article class="blog-post-card" onclick="viewSupabaseBlogPost(${blog.id})">
                 <div class="post-image">
                     <img src="${blog.image}" alt="${blog.title}">
                     <span class="post-category">${blog.category}</span>
                 </div>
                 <div class="post-content">
-                    <h3><a href="#" onclick="viewSupabaseBlogPost(${blog.id}); return false;">${blog.title}</a></h3>
+                    <h3><a href="#" onclick="event.stopPropagation(); viewSupabaseBlogPost(${blog.id}); return false;">${blog.title}</a></h3>
                     <p class="post-meta">
                         <span><i class="far fa-calendar"></i> ${new Date(blog.created_at).toLocaleDateString('en-US', { 
                             year: 'numeric', 
                             month: 'long', 
                             day: 'numeric' 
                         })}</span>
-                        <span><i class="far fa-user"></i> ${blog.author}</span>
+                        <span><i class="far fa-user"></i> ${blog.author || 'Admin'}</span>
                     </p>
-                    <p class="post-excerpt">${blog.excerpt}</p>
-                    <a href="#" class="read-more" onclick="viewSupabaseBlogPost(${blog.id}); return false;">
-                        Read More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <p class="post-excerpt">
+                        ${blog.excerpt}
+                    </p>
+                    <a href="#" class="read-more" onclick="event.stopPropagation(); viewSupabaseBlogPost(${blog.id}); return false;">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
         `).join('');
@@ -293,22 +293,23 @@ async function viewSupabaseBlogPost(id) {
         const modalContent = document.getElementById('blogModalContent');
         modalContent.innerHTML = `
             <article class="blog-detail">
-                <img src="${blog.image}" alt="${blog.title}" style="width: 100%; border-radius: 12px; margin-bottom: 2rem;">
-                <div class="blog-category" style="display: inline-block; background: #c9a961; color: white; padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 1rem;">
-                    ${blog.category}
+                <div class="blog-detail-image-wrapper">
+                    <img src="${blog.image}" alt="${blog.title}">
+                    <div class="blog-detail-category">${blog.category}</div>
                 </div>
-                <h1 style="color: #1e3a5f; margin-bottom: 1rem;">${blog.title}</h1>
-                <div style="color: #6b6b6b; margin-bottom: 2rem;">
-                    <i class="far fa-calendar"></i> ${new Date(blog.created_at).toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
-                    })}
-                    <span style="margin: 0 1rem;">•</span>
-                    <i class="far fa-user"></i> ${blog.author}
-                </div>
-                <div style="line-height: 1.8; color: #4a4a4a;">
-                    ${blog.content.split('\n').map(p => `<p style="margin-bottom: 1rem;">${p}</p>`).join('')}
+                <div class="blog-detail-body">
+                    <h1>${blog.title}</h1>
+                    <div class="blog-detail-meta">
+                        <span><i class="far fa-calendar"></i> ${new Date(blog.created_at).toLocaleDateString('en-US', { 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric' 
+                        })}</span>
+                        <span><i class="far fa-user"></i> ${blog.author}</span>
+                    </div>
+                    <div class="blog-detail-content">
+                        ${blog.content.split('\n').map(p => `<p>${p}</p>`).join('')}
+                    </div>
                 </div>
             </article>
         `;
