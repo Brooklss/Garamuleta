@@ -347,3 +347,510 @@
 @media (prefers-color-scheme: dark) {
     /* Keep light theme for now, but prepared for future */
 }
+
+/* ========================================
+   BLOG PAGE MOBILE ENHANCEMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Blog filters bar */
+    .blog-filters-bar {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        padding: 0 1rem !important;
+    }
+    
+    .categories-scroll {
+        width: 100%;
+        padding-bottom: 0.5rem;
+    }
+    
+    .category-tag {
+        padding: 0.625rem 1rem !important;
+        font-size: 0.85rem !important;
+        white-space: nowrap;
+    }
+    
+    .blog-search {
+        width: 100% !important;
+        min-width: auto !important;
+    }
+    
+    .blog-search input {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+    }
+    
+    /* Blog posts grid */
+    .blog-posts {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 0 !important;
+    }
+    
+    /* Blog cards */
+    .blog-post-card {
+        margin: 0 !important;
+    }
+    
+    .post-image {
+        max-height: 180px !important;
+    }
+    
+    .post-content {
+        padding: 1rem 1.25rem 1.25rem !important;
+    }
+    
+    .post-content h3 {
+        font-size: 1.05rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    .post-meta {
+        font-size: 0.7rem !important;
+        gap: 0.5rem !important;
+        flex-wrap: wrap;
+    }
+    
+    .post-excerpt {
+        font-size: 0.85rem !important;
+        -webkit-line-clamp: 2 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-categories {
+        padding: 1.5rem 0 !important;
+    }
+    
+    .blog-filters-bar {
+        gap: 0.75rem !important;
+    }
+    
+    .categories-scroll {
+        gap: 0.5rem !important;
+    }
+    
+    .category-tag {
+        padding: 0.5rem 0.875rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    .blog-section {
+        padding: 2rem 0 !important;
+    }
+    
+    .blog-main {
+        padding: 0 1rem !important;
+    }
+    
+    .blog-posts {
+        gap: 1.25rem !important;
+    }
+    
+    .post-image {
+        max-height: 160px !important;
+    }
+    
+    .post-content {
+        padding: 0.875rem 1rem 1rem !important;
+    }
+    
+    .post-content h3 {
+        font-size: 0.95rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .post-category {
+        font-size: 0.65rem !important;
+        padding: 0.35rem 0.7rem !important;
+    }
+}
+
+/* ========================================
+   PRODUCTS PAGE MOBILE ENHANCEMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .products-showcase {
+        padding: 0 !important;
+    }
+    
+    .product-item {
+        margin-bottom: 0 !important;
+    }
+    
+    .product-image {
+        height: 200px !important;
+    }
+    
+    .product-info {
+        padding: 1.25rem !important;
+    }
+    
+    .product-info h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    .product-features {
+        margin: 1rem 0 !important;
+    }
+    
+    .product-features li {
+        font-size: 0.875rem !important;
+        padding: 0.4rem 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-image {
+        height: 180px !important;
+    }
+    
+    .product-info h3 {
+        font-size: 1rem !important;
+    }
+    
+    .product-features li {
+        font-size: 0.825rem !important;
+    }
+}
+
+/* ========================================
+   CONTACT PAGE MOBILE ENHANCEMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .contact-info-card {
+        padding: 1.5rem !important;
+    }
+    
+    .contact-info-item {
+        padding: 1.25rem !important;
+    }
+    
+    .contact-form {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .map-container {
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info-card,
+    .contact-form {
+        padding: 1.25rem !important;
+    }
+    
+    .contact-info-item {
+        padding: 1rem !important;
+    }
+    
+    .contact-info-item h3 {
+        font-size: 1rem !important;
+    }
+    
+    .map-container {
+        height: 250px !important;
+    }
+}
+
+/* ========================================
+   PROJECTS PAGE MOBILE ENHANCEMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .project-card {
+        margin: 0 !important;
+    }
+    
+    .project-image {
+        height: 200px !important;
+    }
+    
+    .project-info {
+        padding: 1.25rem !important;
+    }
+    
+    .project-info h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    .project-meta {
+        flex-wrap: wrap;
+        gap: 0.75rem !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-image {
+        height: 180px !important;
+    }
+    
+    .project-info {
+        padding: 1rem !important;
+    }
+    
+    .project-info h3 {
+        font-size: 1rem !important;
+    }
+    
+    .project-meta {
+        font-size: 0.75rem !important;
+    }
+}
+
+/* ========================================
+   ABOUT PAGE MOBILE ENHANCEMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .timeline-modern {
+        padding: 3rem 0 !important;
+    }
+    
+    .timeline-modern-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .timeline-modern-card {
+        padding: 1.25rem !important;
+    }
+    
+    .company-values-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .value-card {
+        padding: 1.5rem !important;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+        gap: 1rem !important;
+    }
+    
+    .team-member {
+        padding: 1rem !important;
+    }
+    
+    .team-image {
+        height: 140px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-modern-card {
+        padding: 1rem !important;
+    }
+    
+    .timeline-year {
+        font-size: 2rem !important;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1rem !important;
+    }
+    
+    .value-card {
+        padding: 1.25rem !important;
+    }
+    
+    .value-icon {
+        font-size: 2rem !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .team-member {
+        max-width: 100% !important;
+    }
+}
+
+/* ========================================
+   NAVIGATION MOBILE ENHANCEMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex !important;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1001;
+    }
+    
+    .mobile-menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #1e3a5f;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        padding: 5rem 2rem 2rem;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .nav-menu a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .nav-menu .btn-contact {
+        margin-top: 1rem;
+        text-align: center;
+        border-radius: 8px;
+        border: none;
+    }
+    
+    /* Mobile menu overlay */
+    .mobile-menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+    
+    .mobile-menu-overlay.active {
+        display: block;
+    }
+}
+
+/* ========================================
+   CTA SECTION MOBILE ENHANCEMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 3rem 0 !important;
+    }
+    
+    .cta-content {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 0.75rem !important;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-section {
+        padding: 2rem 0 !important;
+    }
+    
+    .cta-content {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.25rem !important;
+    }
+    
+    .cta-content p {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ========================================
+   SCROLL TO TOP BUTTON MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .scroll-to-top {
+        width: 45px !important;
+        height: 45px !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        font-size: 1.25rem !important;
+    }
+}
+
+/* ========================================
+   LOADING STATES MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .loading-message {
+        padding: 2rem 1rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .loading-message i {
+        font-size: 1.5rem !important;
+    }
+}
