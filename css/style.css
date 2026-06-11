@@ -6938,3 +6938,25 @@ p {
     }
 }
 
+
+/* ======== BRAND IMAGES ======== */
+.nav-pill-logo .logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.footer-brand .footer-logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+.product-image-brand {
+    background: #F2F5F3;
+}
+
+.product-image-brand img {
+    object-fit: contain;
+    padding: 1.25rem;
+}
