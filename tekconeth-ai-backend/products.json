@@ -1,0 +1,179 @@
+﻿{
+    "company_name": "Tekcon Ethiopia",
+    "owner": "Tekeba Brhine",
+    "founded": "2004",
+    "years_of_experience": 20,    "location": "Addis Ababa, Ethiopia",
+    "phone": "+251 11 XXX XXXX",
+    "email": "info@tekconethiopia.com",
+    "specialty": "Bathroom water heating solutions — import, distribution, and after-sales service",
+
+    "product_categories": [
+        "Electric Storage Water Heaters",
+        "Instant Electric Water Heaters",
+        "Solar Water Heaters",
+        "Gas Water Heaters",
+        "Accessories & Spare Parts"
+    ],
+
+    "products": [
+        {
+            "id": "EWH-10",
+            "category": "Electric Storage Water Heater",
+            "name": "Tekcon ThermoStore 10L",
+            "model": "TK-EWH-010",
+            "capacity_liters": 10,
+            "power_kw": 1.5,
+            "pressure_bar": 8,
+            "voltage": "220V / 50Hz",            "in_stock": true,
+            "features": ["Rapid heat-up", "Anti-corrosion inner tank", "Pressure relief valve", "Energy efficiency class A"],
+            "best_for": "Small bathroom, single user"
+        },
+        {
+            "id": "EWH-30",
+            "category": "Electric Storage Water Heater",
+            "name": "Tekcon ThermoStore 30L",
+            "model": "TK-EWH-030",
+            "capacity_liters": 30,
+            "power_kw": 2.0,
+            "pressure_bar": 8,
+            "voltage": "220V / 50Hz",            "in_stock": true,
+            "features": ["Large capacity", "Enamel-coated tank", "Thermostat control", "Safety cut-off"],
+            "best_for": "Family bathroom, 2–3 users"
+        },
+        {
+            "id": "EWH-50",
+            "category": "Electric Storage Water Heater",
+            "name": "Tekcon ThermoStore 50L",
+            "model": "TK-EWH-050",
+            "capacity_liters": 50,
+            "power_kw": 2.0,
+            "pressure_bar": 8,
+            "voltage": "220V / 50Hz",            "in_stock": true,
+            "features": ["High capacity", "Digital temperature display", "Magnesium anode protection", "Child lock"],
+            "best_for": "Family of 4–5, two bathrooms"
+        },
+        {
+            "id": "EWH-80",
+            "category": "Electric Storage Water Heater",
+            "name": "Tekcon ThermoStore 80L",
+            "model": "TK-EWH-080",
+            "capacity_liters": 80,
+            "power_kw": 2.5,
+            "pressure_bar": 8,
+            "voltage": "220V / 50Hz",            "in_stock": false,
+            "features": ["Commercial-grade capacity", "Smart thermostat", "Titanium heating element", "Stainless steel outer shell"],
+            "best_for": "Apartments, guest houses, 6+ users"
+        },
+        {
+            "id": "IWH-35",
+            "category": "Instant Electric Water Heater",
+            "name": "Tekcon InstantFlow 3.5kW",
+            "model": "TK-IWH-035",
+            "power_kw": 3.5,
+            "flow_rate_lpm": 4,
+            "voltage": "220V / 50Hz",            "in_stock": true,
+            "features": ["Instant hot water — no waiting", "Compact wall-mount design", "Automatic temperature control", "Overheat protection"],
+            "best_for": "Single shower, small apartment"
+        },
+        {
+            "id": "IWH-55",
+            "category": "Instant Electric Water Heater",
+            "name": "Tekcon InstantFlow 5.5kW",
+            "model": "TK-IWH-055",
+            "power_kw": 5.5,
+            "flow_rate_lpm": 6,
+            "voltage": "220V / 50Hz",            "in_stock": true,
+            "features": ["High-flow instant heating", "Digital LED display", "Anti-limescale element", "Safety shut-off valve"],
+            "best_for": "Shower + basin, family use"
+        },
+        {
+            "id": "SOL-150",
+            "category": "Solar Water Heater",
+            "name": "Tekcon SolarWarm 150L",
+            "model": "TK-SOL-150",
+            "capacity_liters": 150,
+            "collector_type": "Evacuated tube",
+            "tubes": 15,            "in_stock": true,
+            "features": ["Zero electricity running cost", "Works on cloudy days", "Backup electric element included", "5-year tank warranty"],
+            "best_for": "Villa, family home"
+        },
+        {
+            "id": "SOL-200",
+            "category": "Solar Water Heater",
+            "name": "Tekcon SolarWarm 200L",
+            "model": "TK-SOL-200",
+            "capacity_liters": 200,
+            "collector_type": "Evacuated tube",
+            "tubes": 20,            "in_stock": true,
+            "features": ["High-output solar system", "Stainless steel inner tank", "Automatic top-up valve", "Anti-freeze protection"],
+            "best_for": "Larger homes, small hotels"
+        },
+        {
+            "id": "GAS-6",
+            "category": "Gas Water Heater",
+            "name": "Tekcon GasFlow 6L",
+            "model": "TK-GAS-006",
+            "flow_rate_lpm": 6,
+            "gas_type": "LPG / Natural Gas",            "in_stock": true,
+            "features": ["Instant ignition", "Flame failure safety device", "Balanced flue — no chimney needed", "Adjustable temperature"],
+            "best_for": "Areas with unreliable electricity"
+        },
+        {
+            "id": "GAS-16",
+            "category": "Gas Water Heater",
+            "name": "Tekcon GasFlow 16L",
+            "model": "TK-GAS-016",
+            "flow_rate_lpm": 16,
+            "gas_type": "LPG / Natural Gas",            "in_stock": true,
+            "features": ["High-flow output", "Digital temperature control", "Multiple safety sensors", "Eco-combustion technology"],
+            "best_for": "Hotels, guesthouses, commercial use"
+        },
+        {
+            "id": "ACC-PRV",
+            "category": "Accessories & Spare Parts",
+            "name": "Pressure Relief Valve",
+            "model": "TK-ACC-PRV",            "in_stock": true,
+            "features": ["Universal fit", "Certified to 8 bar", "Brass body"],
+            "best_for": "All storage water heaters"
+        },
+        {
+            "id": "ACC-ANO",
+            "category": "Accessories & Spare Parts",
+            "name": "Magnesium Anode Rod",
+            "model": "TK-ACC-ANO",            "in_stock": true,
+            "features": ["Extends tank life by 5+ years", "Prevents rust", "Easy replacement"],
+            "best_for": "All storage water heater tanks"
+        }
+    ],
+
+    "faqs": [
+        {
+            "question": "Where are you located?",
+            "answer": "We are based in Addis Ababa, Ethiopia. We deliver across all major Ethiopian cities."
+        },
+        {
+            "question": "Do you offer installation?",
+            "answer": "Yes, Tekcon provides professional installation services for all products through our certified technicians."
+        },
+        {
+            "question": "What is the warranty on your water heaters?",
+            "answer": "We offer 2-year warranty on electric water heaters and 5-year tank warranty on solar systems."
+        },
+        {
+            "question": "Which water heater is best for a family of 5?",
+            "answer": "We recommend the Tekcon ThermoStore 50L (TK-EWH-050) for a family of 4–5, or the 80L model for larger households."
+        },
+        {
+            "question": "Do you have spare parts?",
+            "answer": "Yes, we stock all spare parts including anode rods, heating elements, thermostats, and pressure relief valves."
+        },
+        {
+            "question": "How can I get a price?",
+            "answer": "Contact us via the website contact form, call us at +251 11 XXX XXXX, or visit our Addis Ababa showroom."
+        },
+        {
+            "question": "Who is the owner of Tekcon Ethiopia?",
+            "answer": "Tekcon Ethiopia was founded and is owned by Ato Tekeba Brhine, who has over 20 years of experience in the water heating industry."
+        }
+    ]
+}

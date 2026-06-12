@@ -3,634 +3,1020 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore GARA's comprehensive range of premium construction finishing materials - flooring, wall cladding, ceiling systems, and more.">
-    <title>Products & Services - GARA Construction Solutions PLC</title>
+    <meta name="description" content="Tekcon Ethiopia Product Catalog — Electric, Solar & Gas Water Heaters. Browse our full range and contact us for enquiries.">
+    <title>Product Catalog - Tekcon Ethiopia | Water Heating Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile-enhancements.css">
+    <link rel="stylesheet" href="css/ai-chat.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ─── Catalog Variables ─────────────────────────────────── */
+        :root {
+            --tk-green:  #88B291;
+            --tk-dark:   #1E4C38;
+            --tk-bg:     #090C0A;
+            --tk-card:   #0f1510;
+            --tk-border: rgba(136,178,145,0.13);
+            --tk-text:   #c8d8cc;
+            --tk-muted:  #5a7264;
+        }
+
+        /* ─── Category Nav (sticky) ─────────────────────────────── */
+        .cat-nav {
+            background: rgba(9,12,10,0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--tk-border);
+            position: sticky;
+            top: 70px;
+            z-index: 90;
+        }
+        .cat-nav-inner {
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .cat-nav-inner::-webkit-scrollbar { display:none; }
+        .cat-nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.05rem 1.5rem;
+            border: none;
+            background: transparent;
+            color: var(--tk-muted);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            white-space: nowrap;
+            border-bottom: 2px solid transparent;
+            transition: all 0.22s;
+            text-decoration: none;
+        }
+        .cat-nav-btn i { font-size: 0.95rem; }
+        .cat-nav-btn:hover, .cat-nav-btn.active {
+            color: var(--tk-green);
+            border-bottom-color: var(--tk-green);
+        }
+
+        /* ─── Catalog Hero ──────────────────────────────────────── */
+        .cat-hero {
+            background: linear-gradient(145deg, #070a08 0%, #0d1a12 55%, #152b1c 100%);
+            padding: 8rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .cat-hero::before {
+            content:'';
+            position:absolute;
+            inset:0;
+            background: radial-gradient(ellipse 55% 80% at 85% 40%, rgba(30,76,56,0.18) 0%, transparent 70%);
+        }
+        .cat-hero-inner { position:relative; z-index:1; }
+        .cat-hero-eyebrow {
+            display:block;
+            font-family:'Inter',sans-serif;
+            font-size:0.68rem;
+            font-weight:700;
+            letter-spacing:0.22em;
+            color:var(--tk-green);
+            text-transform:uppercase;
+            margin-bottom:1rem;
+        }
+        .cat-hero-title {
+            font-family:'Inter',sans-serif;
+            font-size:clamp(2.2rem,5vw,3.8rem);
+            font-weight:800;
+            color:#f0f5f2;
+            line-height:1.1;
+            letter-spacing:-0.03em;
+            margin:0 0 1.2rem;
+        }
+        .cat-hero-sub {
+            font-family:'Inter',sans-serif;
+            font-size:0.975rem;
+            color:var(--tk-muted);
+            max-width:520px;
+            line-height:1.7;
+            margin:0;
+        }
+        .cat-hero-tags {
+            display:flex;
+            flex-wrap:wrap;
+            gap:0.65rem;
+            margin-top:2rem;
+        }
+        .cat-hero-tag {
+            display:inline-flex;
+            align-items:center;
+            gap:0.4rem;
+            padding:0.38rem 0.9rem;
+            border:1px solid rgba(136,178,145,0.22);
+            border-radius:20px;
+            font-family:'Inter',sans-serif;
+            font-size:0.72rem;
+            font-weight:600;
+            color:var(--tk-green);
+        }
+
+        /* ─── Section Shell ─────────────────────────────────────── */
+        .prod-section { padding:4.5rem 0; background:var(--tk-bg); }
+        .prod-section.alt { background:#0b100d; }
+
+        .prod-section-header {
+            display:flex;
+            align-items:flex-start;
+            gap:1.2rem;
+            margin-bottom:2.5rem;
+            padding-bottom:1.4rem;
+            border-bottom:1px solid var(--tk-border);
+        }
+        .prod-section-icon {
+            width:46px; height:46px;
+            border-radius:12px;
+            background:rgba(136,178,145,0.08);
+            border:1px solid var(--tk-border);
+            display:flex; align-items:center; justify-content:center;
+            color:var(--tk-green);
+            font-size:1.1rem;
+            flex-shrink:0;
+        }
+        .prod-section-meta { flex:1; }
+        .prod-section-eyebrow {
+            display:block;
+            font-family:'Inter',sans-serif;
+            font-size:0.63rem;
+            font-weight:700;
+            letter-spacing:0.2em;
+            color:var(--tk-green);
+            text-transform:uppercase;
+            margin-bottom:0.3rem;
+        }
+        .prod-section-title {
+            font-family:'Inter',sans-serif;
+            font-size:1.55rem;
+            font-weight:800;
+            color:#e4ede6;
+            margin:0 0 0.25rem;
+            letter-spacing:-0.02em;
+        }
+        .prod-section-desc {
+            font-family:'Inter',sans-serif;
+            font-size:0.85rem;
+            color:var(--tk-muted);
+            margin:0;
+            line-height:1.65;
+        }
+
+        /* ─── Product Grid ──────────────────────────────────────── */
+        .prod-grid {
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:1.4rem;
+        }
+
+        /* ─── Product Card ──────────────────────────────────────── */
+        .prod-card {
+            background:var(--tk-card);
+            border-radius:18px;
+            border:1px solid var(--tk-border);
+            overflow:hidden;
+            display:flex;
+            flex-direction:column;
+            transition: transform 0.3s cubic-bezier(.22,.68,0,1.2),
+                        box-shadow 0.3s ease,
+                        border-color 0.3s;
+        }
+        .prod-card:hover {
+            transform:translateY(-6px);
+            box-shadow:0 20px 50px rgba(0,0,0,0.45), 0 0 0 1px rgba(136,178,145,0.2);
+            border-color:rgba(136,178,145,0.25);
+        }
+
+        /* Image zone */
+        .prod-img-wrap {
+            position:relative;
+            overflow:hidden;
+            background:#131f17;
+        }
+        /* Midea-style: white/light background for product images */
+        .prod-img-light { background:#f5f8f5; }
+        .prod-img-wrap img {
+            width:100%;
+            aspect-ratio:4/3;
+            object-fit:cover;
+            transition:transform 0.45s ease;
+            display:block;
+        }
+        .prod-img-light img { object-fit:contain; padding:1.2rem; }
+        .prod-card:hover .prod-img-wrap img { transform:scale(1.05); }
+
+        /* Badges */
+        .prod-badge {
+            position:absolute;
+            top:0.85rem; left:0.85rem;
+            padding:0.22rem 0.65rem;
+            border-radius:6px;
+            font-family:'Inter',sans-serif;
+            font-size:0.6rem;
+            font-weight:700;
+            letter-spacing:0.07em;
+            text-transform:uppercase;
+            z-index:2;
+            pointer-events:none;
+        }
+        .badge-popular  { background:rgba(136,178,145,0.92); color:#090C0A; }
+        .badge-solar    { background:rgba(255,190,50,0.9);   color:#1a1000; }
+        .badge-gas      { background:rgba(255,100,50,0.88);  color:#fff; }
+        .badge-instant  { background:rgba(70,140,255,0.88);  color:#fff; }
+        .badge-new      { background:rgba(80,200,140,0.88);  color:#fff; }
+        .badge-bestseller { background:#1E4C38; color:#88B291; }
+
+        /* Model chip */
+        .prod-model-chip {
+            position:absolute;
+            bottom:0.75rem; right:0.85rem;
+            padding:0.18rem 0.55rem;
+            background:rgba(0,0,0,0.55);
+            backdrop-filter:blur(4px);
+            border-radius:5px;
+            font-family:'Inter',sans-serif;
+            font-size:0.6rem;
+            font-weight:600;
+            color:rgba(255,255,255,0.55);
+            letter-spacing:0.05em;
+        }
+
+        /* Card body */
+        .prod-body {
+            padding:1.2rem 1.3rem 1rem;
+            display:flex;
+            flex-direction:column;
+            gap:0.65rem;
+            flex:1;
+        }
+        .prod-name {
+            font-family:'Inter',sans-serif;
+            font-size:1rem;
+            font-weight:700;
+            color:#e4ede6;
+            margin:0;
+            letter-spacing:-0.01em;
+            line-height:1.3;
+        }
+        .prod-short-desc {
+            font-family:'Inter',sans-serif;
+            font-size:0.8rem;
+            color:var(--tk-muted);
+            margin:0;
+            line-height:1.55;
+        }
+
+        /* Spec pills */
+        .prod-specs {
+            display:flex;
+            flex-wrap:wrap;
+            gap:0.38rem;
+        }
+        .spec-pill {
+            display:inline-flex;
+            align-items:center;
+            gap:0.28rem;
+            padding:0.26rem 0.6rem;
+            background:rgba(136,178,145,0.07);
+            border:1px solid rgba(136,178,145,0.16);
+            border-radius:7px;
+            font-family:'Inter',sans-serif;
+            font-size:0.68rem;
+            font-weight:600;
+            color:var(--tk-green);
+            white-space:nowrap;
+        }
+        .spec-pill i { font-size:0.58rem; }
+
+        /* Feature bullets */
+        .prod-features {
+            list-style:none;
+            padding:0; margin:0;
+            display:flex;
+            flex-direction:column;
+            gap:0.28rem;
+        }
+        .prod-features li {
+            display:flex;
+            align-items:flex-start;
+            gap:0.42rem;
+            font-family:'Inter',sans-serif;
+            font-size:0.78rem;
+            color:#6a8070;
+            line-height:1.4;
+        }
+        .prod-features li i {
+            color:var(--tk-green);
+            font-size:0.6rem;
+            margin-top:0.22rem;
+            flex-shrink:0;
+        }
+
+        /* Best for */
+        .prod-best-for {
+            font-family:'Inter',sans-serif;
+            font-size:0.7rem;
+            color:#3d5447;
+            display:flex;
+            align-items:center;
+            gap:0.38rem;
+            margin-top:auto;
+            padding-top:0.3rem;
+        }
+        .prod-best-for i { color:var(--tk-green); font-size:0.62rem; }
+
+        /* Card footer (CTA, no price) */
+        .prod-footer {
+            padding:0.9rem 1.3rem;
+            border-top:1px solid rgba(136,178,145,0.07);
+            background:rgba(0,0,0,0.12);
+        }
+        .prod-enquire-btn {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:0.45rem;
+            width:100%;
+            padding:0.65rem 1.1rem;
+            background:linear-gradient(135deg, #1E4C38 0%, #2d6b50 100%);
+            color:#c8e8d0;
+            border:none;
+            border-radius:10px;
+            font-family:'Inter',sans-serif;
+            font-size:0.78rem;
+            font-weight:700;
+            text-decoration:none;
+            cursor:pointer;
+            transition:all 0.22s;
+            letter-spacing:0.02em;
+        }
+        .prod-enquire-btn:hover {
+            background:linear-gradient(135deg, #2d6b50 0%, #88B291 100%);
+            color:#090C0A;
+            transform:scale(1.02);
+            box-shadow:0 6px 20px rgba(30,76,56,0.4);
+        }
+
+        /* ─── Accessories: icon-only cards ─────────────────────── */
+        .acc-icon-card {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            min-height:160px;
+            background:linear-gradient(135deg, #111812, #0d1a12);
+            font-size:3.5rem;
+            color:rgba(136,178,145,0.2);
+        }
+
+        /* ─── Why Tekcon strip ──────────────────────────────────── */
+        .why-strip {
+            background:linear-gradient(135deg, #0b1409, #111812);
+            border-top:1px solid var(--tk-border);
+            border-bottom:1px solid var(--tk-border);
+            padding:3.5rem 0;
+        }
+        .why-grid {
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:2rem;
+        }
+        .why-item {
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            text-align:center;
+            gap:0.7rem;
+        }
+        .why-icon {
+            width:50px; height:50px;
+            border-radius:14px;
+            background:rgba(136,178,145,0.08);
+            border:1px solid var(--tk-border);
+            display:flex; align-items:center; justify-content:center;
+            color:var(--tk-green);
+            font-size:1.15rem;
+        }
+        .why-item h4 {
+            font-family:'Inter',sans-serif;
+            font-size:0.88rem;
+            font-weight:700;
+            color:#e4ede6;
+            margin:0;
+        }
+        .why-item p {
+            font-family:'Inter',sans-serif;
+            font-size:0.76rem;
+            color:var(--tk-muted);
+            margin:0;
+            line-height:1.5;
+        }
+
+        /* ─── Responsive ────────────────────────────────────────── */
+        @media (max-width:1024px) {
+            .prod-grid { grid-template-columns:repeat(2,1fr); }
+            .why-grid  { grid-template-columns:repeat(2,1fr); }
+        }
+        @media (max-width:640px) {
+            .prod-grid { grid-template-columns:1fr; }
+            .why-grid  { grid-template-columns:repeat(2,1fr); gap:1rem; }
+            .cat-hero  { padding:6rem 0 3rem; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation (floating pill) -->
+
+    <!-- Navigation -->
     <div class="nav-pill-wrap">
         <div class="container">
             <nav class="nav-pill">
                 <a href="index.html" class="nav-pill-logo">
-                    <img src="images/company-logo.png" alt="TEKCON logo" class="logo-img">
+                    <img src="images/company-logo.png" alt="Tekcon Ethiopia" class="logo-img">
                 </a>
                 <ul class="nav-pill-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html" class="active">Our Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
                 <a href="contact.html" class="nav-pill-cta">
-                    <span>Contact Us</span>
+                    <span>Enquire Now</span>
                     <span class="nav-pill-cta-icon"><i class="fas fa-phone"></i></span>
                 </a>
             </nav>
         </div>
     </div>
-    
-    <!-- Mobile Menu Overlay -->
+
     <div class="mobile-menu-overlay"></div>
 
-    <!-- Page Header -->
-    <section class="page-banner-editorial">
-        <div class="container">
-            <div class="banner-editorial-header">
-                <div class="banner-editorial-text">
-                    <span class="banner-editorial-eyebrow">— OUR COLLECTION —</span>
-                    <h1 class="banner-editorial-title">Premium Products</h1>
-                </div>
-                <p class="banner-editorial-sub">
-                    Construction finishing materials from leading international brands — sourced for quality, designed for impact, delivered with care.
-                </p>
+    <!-- Hero -->
+    <section class="cat-hero">
+        <div class="container cat-hero-inner">
+            <span class="cat-hero-eyebrow">— PRODUCT CATALOG 2024 —</span>
+            <h1 class="cat-hero-title">Water Heating Solutions<br>for Every Ethiopian Home</h1>
+            <p class="cat-hero-sub">Browse Tekcon's full range of electric, solar, and gas water heaters — built for reliability, designed for comfort. Contact us for pricing and availability.</p>
+            <div class="cat-hero-tags">
+                <span class="cat-hero-tag"><i class="fas fa-shield-alt"></i> 2-Year Warranty</span>
+                <span class="cat-hero-tag"><i class="fas fa-tools"></i> Professional Installation</span>
+                <span class="cat-hero-tag"><i class="fas fa-headset"></i> After-Sales Support</span>
+                <span class="cat-hero-tag"><i class="fas fa-award"></i> 20 Years of Expertise</span>
             </div>
         </div>
     </section>
 
-    <!-- Product Categories Navigation -->
-    <section class="product-nav">
+    <!-- Category Navigation -->
+    <nav class="cat-nav" aria-label="Product categories">
         <div class="container">
-            <div class="product-nav-scroll">
-                <a href="#flooring" class="product-nav-item active">
-                    <i class="fas fa-th-large"></i>
-                    <span>Flooring</span>
+            <div class="cat-nav-inner">
+                <a href="#electric-storage" class="cat-nav-btn active">
+                    <i class="fas fa-plug"></i> Electric Storage
                 </a>
-                <a href="#wall-cladding" class="product-nav-item">
-                    <i class="fas fa-paint-roller"></i>
-                    <span>Wall Cladding</span>
+                <a href="#instant" class="cat-nav-btn">
+                    <i class="fas fa-bolt"></i> Instant Electric
                 </a>
-                <a href="#ceiling" class="product-nav-item">
-                    <i class="fas fa-grip-lines"></i>
-                    <span>Ceiling Systems</span>
+                <a href="#solar" class="cat-nav-btn">
+                    <i class="fas fa-sun"></i> Solar
                 </a>
-                <a href="#sanitary" class="product-nav-item">
-                    <i class="fas fa-sink"></i>
-                    <span>Sanitary</span>
+                <a href="#gas" class="cat-nav-btn">
+                    <i class="fas fa-fire"></i> Gas
                 </a>
-                <a href="#paints" class="product-nav-item">
-                    <i class="fas fa-fill-drip"></i>
-                    <span>Paints</span>
-                </a>
-                <a href="#decorative" class="product-nav-item">
-                    <i class="fas fa-gem"></i>
-                    <span>Decorative</span>
-                </a>
-            </div>
-            <div class="search-wrapper">
-                <input type="text" id="productSearch" placeholder="Search products..." class="search-input">
-                <button class="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Flooring Solutions -->
-    <section id="flooring" class="product-category">
-        <div class="container">
-            <div class="category-header-editorial">
-                <div class="category-icon">
-                    <i class="fas fa-th-large"></i>
-                </div>
-                <div class="category-header-text">
-                    <span class="category-eyebrow">— CATEGORY 01 —</span>
-                    <h2>Flooring Solutions</h2>
-                    <p>Premium tiles, hardwood, laminate, and luxury vinyl flooring options for every space</p>
-                </div>
-            </div>
-            <div class="products-showcase">
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=600&h=400&fit=crop" alt="Ceramic Tiles">
-                        <div class="product-badge">Popular</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Premium Ceramic Tiles</h3>
-                        <p>High-quality ceramic tiles in various sizes and finishes. Durable, easy to maintain, perfect for residential and commercial use.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Multiple sizes available</li>
-                            <li><i class="fas fa-check"></i> Water resistant</li>
-                            <li><i class="fas fa-check"></i> Easy maintenance</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&h=400&fit=crop" alt="Porcelain Tiles">
-                    </div>
-                    <div class="product-info">
-                        <h3>Porcelain Tiles</h3>
-                        <p>Superior porcelain tiles with exceptional durability and low water absorption. Ideal for high-traffic areas.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Extremely durable</li>
-                            <li><i class="fas fa-check"></i> Frost resistant</li>
-                            <li><i class="fas fa-check"></i> Low maintenance</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=600&h=400&fit=crop" alt="Hardwood Flooring">
-                        <div class="product-badge">Premium</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Hardwood Flooring</h3>
-                        <p>Elegant hardwood flooring in various wood species. Adds warmth and timeless beauty to any space.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Natural wood beauty</li>
-                            <li><i class="fas fa-check"></i> Long-lasting</li>
-                            <li><i class="fas fa-check"></i> Increases property value</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1631889142822-62ed1c7e5509?w=600&h=400&fit=crop" alt="Laminate Flooring">
-                    </div>
-                    <div class="product-info">
-                        <h3>Laminate Flooring</h3>
-                        <p>Cost-effective laminate flooring with wood-like appearance. Easy installation and maintenance.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Budget-friendly</li>
-                            <li><i class="fas fa-check"></i> Scratch resistant</li>
-                            <li><i class="fas fa-check"></i> Easy installation</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1615875474908-0036cd9f7701?w=600&h=400&fit=crop" alt="Vinyl Flooring">
-                    </div>
-                    <div class="product-info">
-                        <h3>Luxury Vinyl Flooring</h3>
-                        <p>Waterproof luxury vinyl flooring with realistic wood and stone looks. Perfect for any room.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> 100% waterproof</li>
-                            <li><i class="fas fa-check"></i> Comfortable underfoot</li>
-                            <li><i class="fas fa-check"></i> Versatile designs</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop" alt="Marble Flooring">
-                        <div class="product-badge">Luxury</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Natural Marble</h3>
-                        <p>Exquisite natural marble flooring for luxury projects. Timeless elegance and unique patterns.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Natural stone beauty</li>
-                            <li><i class="fas fa-check"></i> Unique patterns</li>
-                            <li><i class="fas fa-check"></i> Premium quality</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Wall Cladding -->
-    <section id="wall-cladding" class="product-category alt-bg">
-        <div class="container">
-            <div class="category-header-editorial">
-                <div class="category-icon">
-                    <i class="fas fa-paint-roller"></i>
-                </div>
-                <div class="category-header-text">
-                    <span class="category-eyebrow">— CATEGORY 02 —</span>
-                    <h2>Wall Cladding</h2>
-                    <p>Modern wall finishes, panels, and decorative cladding systems for contemporary spaces</p>
-                </div>
-            </div>
-            <div class="products-showcase">
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&h=400&fit=crop" alt="Wall Tiles">
-                    </div>
-                    <div class="product-info">
-                        <h3>Designer Wall Tiles</h3>
-                        <p>Contemporary wall tiles in various patterns, colors, and textures. Perfect for kitchens, bathrooms, and feature walls.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Modern designs</li>
-                            <li><i class="fas fa-check"></i> Easy to clean</li>
-                            <li><i class="fas fa-check"></i> Moisture resistant</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop" alt="3D Wall Panels">
-                        <div class="product-badge">Trending</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>3D Wall Panels</h3>
-                        <p>Textured 3D wall panels that add depth and character to any space. Available in various materials.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Creates visual depth</li>
-                            <li><i class="fas fa-check"></i> Lightweight</li>
-                            <li><i class="fas fa-check"></i> Easy installation</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&h=400&fit=crop" alt="Stone Cladding">
-                    </div>
-                    <div class="product-info">
-                        <h3>Natural Stone Cladding</h3>
-                        <p>Authentic natural stone cladding for exterior and interior applications. Durable and aesthetically pleasing.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Natural beauty</li>
-                            <li><i class="fas fa-check"></i> Weather resistant</li>
-                            <li><i class="fas fa-check"></i> Long-lasting</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1598300188904-896d7d7f6551?w=600&h=400&fit=crop" alt="Wood Panels">
-                    </div>
-                    <div class="product-info">
-                        <h3>Decorative Wood Panels</h3>
-                        <p>Premium wood paneling for warm, elegant interiors. Various finishes and patterns available.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Warm aesthetic</li>
-                            <li><i class="fas fa-check"></i> Acoustic properties</li>
-                            <li><i class="fas fa-check"></i> Sustainable options</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ceiling Systems -->
-    <section id="ceiling" class="product-category">
-        <div class="container">
-            <div class="category-header-editorial">
-                <div class="category-icon">
-                    <i class="fas fa-grip-lines"></i>
-                </div>
-                <div class="category-header-text">
-                    <span class="category-eyebrow">— CATEGORY 03 —</span>
-                    <h2>Ceiling Systems</h2>
-                    <p>Contemporary ceiling solutions for commercial and residential spaces</p>
-                </div>
-            </div>
-            <div class="products-showcase">
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1600494603989-9650cf6dca19?w=600&h=400&fit=crop" alt="Suspended Ceiling">
-                    </div>
-                    <div class="product-info">
-                        <h3>Suspended Ceiling Tiles</h3>
-                        <p>Versatile suspended ceiling systems for offices and commercial spaces. Excellent acoustic performance.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Sound absorption</li>
-                            <li><i class="fas fa-check"></i> Easy access to utilities</li>
-                            <li><i class="fas fa-check"></i> Professional finish</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1562544042-47d1b8bebc97?w=600&h=400&fit=crop" alt="Gypsum Board">
-                    </div>
-                    <div class="product-info">
-                        <h3>Gypsum Board Ceiling</h3>
-                        <p>Smooth gypsum board ceilings for modern interiors. Allows for creative designs and lighting integration.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Smooth finish</li>
-                            <li><i class="fas fa-check"></i> Design flexibility</li>
-                            <li><i class="fas fa-check"></i> Fire resistant</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1565540579025-a0fa71365d8b?w=600&h=400&fit=crop" alt="Metal Ceiling">
-                    </div>
-                    <div class="product-info">
-                        <h3>Metal Ceiling Panels</h3>
-                        <p>Durable metal ceiling panels for contemporary commercial spaces. Low maintenance and modern appearance.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Durable</li>
-                            <li><i class="fas fa-check"></i> Modern aesthetic</li>
-                            <li><i class="fas fa-check"></i> Moisture resistant</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sanitary Fixtures -->
-    <section id="sanitary" class="product-category alt-bg">
-        <div class="container">
-            <div class="category-header-editorial">
-                <div class="category-icon">
-                    <i class="fas fa-sink"></i>
-                </div>
-                <div class="category-header-text">
-                    <span class="category-eyebrow">— CATEGORY 04 —</span>
-                    <h2>Sanitary Fixtures</h2>
-                    <p>High-quality bathroom fixtures and fittings from leading international brands</p>
-                </div>
-            </div>
-            <div class="products-showcase">
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop" alt="Toilets">
-                    </div>
-                    <div class="product-info">
-                        <h3>Premium Toilets</h3>
-                        <p>Modern toilet designs with water-saving technology. Available in various styles and configurations.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Water efficient</li>
-                            <li><i class="fas fa-check"></i> Modern designs</li>
-                            <li><i class="fas fa-check"></i> Easy cleaning</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop" alt="Basins">
-                    </div>
-                    <div class="product-info">
-                        <h3>Designer Basins</h3>
-                        <p>Elegant basin designs including countertop, wall-mounted, and pedestal options.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Various styles</li>
-                            <li><i class="fas fa-check"></i> Quality materials</li>
-                            <li><i class="fas fa-check"></i> Easy installation</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=600&h=400&fit=crop" alt="Showers">
-                    </div>
-                    <div class="product-info">
-                        <h3>Shower Systems</h3>
-                        <p>Complete shower systems including rain showers, hand showers, and thermostatic controls.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Modern technology</li>
-                            <li><i class="fas fa-check"></i> Temperature control</li>
-                            <li><i class="fas fa-check"></i> Durable finish</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1600566752229-250ed79c5a15?w=600&h=400&fit=crop" alt="Faucets">
-                    </div>
-                    <div class="product-info">
-                        <h3>Premium Faucets</h3>
-                        <p>High-quality faucets and mixers in various finishes. Combining functionality with elegant design.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Multiple finishes</li>
-                            <li><i class="fas fa-check"></i> Smooth operation</li>
-                            <li><i class="fas fa-check"></i> Long-lasting</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image product-image-brand">
-                        <img src="images/product-brand.png" alt="DuraTherm Instant and Storage Electric Water Heaters">
-                    </div>
-                    <div class="product-info">
-                        <h3>DuraTherm Water Heaters</h3>
-                        <p>Instant and storage electric water heaters from DuraTherm. Reliable hot water solutions for residential and commercial projects.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Instant &amp; storage models</li>
-                            <li><i class="fas fa-check"></i> Energy efficient</li>
-                            <li><i class="fas fa-check"></i> Durable build quality</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Paints & Coatings -->
-    <section id="paints" class="product-category">
-        <div class="container">
-            <div class="category-header-editorial">
-                <div class="category-icon">
-                    <i class="fas fa-fill-drip"></i>
-                </div>
-                <div class="category-header-text">
-                    <span class="category-eyebrow">— CATEGORY 05 —</span>
-                    <h2>Paints & Coatings</h2>
-                    <p>Premium paint solutions for interior and exterior applications</p>
-                </div>
-            </div>
-            <div class="products-showcase">
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="images/products/paint1.jpg" alt="Interior Paint">
-                    </div>
-                    <div class="product-info">
-                        <h3>Interior Paints</h3>
-                        <p>High-quality interior paints in thousands of colors. Low VOC, easy application, and excellent coverage.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Low odor</li>
-                            <li><i class="fas fa-check"></i> Washable</li>
-                            <li><i class="fas fa-check"></i> Eco-friendly options</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="images/products/paint2.jpg" alt="Exterior Paint">
-                    </div>
-                    <div class="product-info">
-                        <h3>Exterior Paints</h3>
-                        <p>Weather-resistant exterior paints with UV protection. Maintains color and finish for years.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Weather resistant</li>
-                            <li><i class="fas fa-check"></i> UV protection</li>
-                            <li><i class="fas fa-check"></i> Long-lasting</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="images/products/paint3.jpg" alt="Texture Paint">
-                    </div>
-                    <div class="product-info">
-                        <h3>Texture Coatings</h3>
-                        <p>Decorative texture coatings for unique wall finishes. Create stunning visual effects.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Unique finishes</li>
-                            <li><i class="fas fa-check"></i> Hides imperfections</li>
-                            <li><i class="fas fa-check"></i> Durable</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Decorative Products -->
-    <section id="decorative" class="product-category alt-bg">
-        <div class="container">
-            <div class="category-header-editorial">
-                <div class="category-icon">
-                    <i class="fas fa-gem"></i>
-                </div>
-                <div class="category-header-text">
-                    <span class="category-eyebrow">— CATEGORY 06 —</span>
-                    <h2>Decorative Products</h2>
-                    <p>Elegant decorative elements and finishing touches for distinctive spaces</p>
-                </div>
-            </div>
-            <div class="products-showcase">
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="images/products/decorative1.jpg" alt="Moldings">
-                    </div>
-                    <div class="product-info">
-                        <h3>Crown Moldings</h3>
-                        <p>Elegant crown moldings and trim pieces to add architectural detail and sophistication.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Various styles</li>
-                            <li><i class="fas fa-check"></i> Easy installation</li>
-                            <li><i class="fas fa-check"></i> Paintable</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="images/products/decorative2.jpg" alt="Lighting">
-                    </div>
-                    <div class="product-info">
-                        <h3>Decorative Lighting</h3>
-                        <p>Premium lighting fixtures that combine functionality with stunning design elements.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Designer pieces</li>
-                            <li><i class="fas fa-check"></i> Energy efficient</li>
-                            <li><i class="fas fa-check"></i> Various styles</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-image">
-                        <img src="images/products/decorative3.jpg" alt="Hardware">
-                    </div>
-                    <div class="product-info">
-                        <h3>Architectural Hardware</h3>
-                        <p>High-quality door handles, cabinet hardware, and decorative accessories.</p>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Premium finishes</li>
-                            <li><i class="fas fa-check"></i> Durable materials</li>
-                            <li><i class="fas fa-check"></i> Contemporary designs</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Request Quote</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Brands Section -->
-    <section class="brands-section">
-        <div class="container">
-            <div class="brands-header">
-                <div class="brands-header-text">
-                    <span class="brands-eyebrow">— OUR PARTNERS —</span>
-                    <h2 class="brands-title">Leading International Brands</h2>
-                </div>
-                <p class="brands-sub">
-                    Authorized distributor for premium construction material brands — partnerships built on quality, reliability, and shared standards.
-                </p>
-            </div>
-            <div class="brands-grid">
-                <div class="brand-logo">
-                    <img src="images/brands/brand1.png" alt="Brand Partner">
-                </div>
-                <div class="brand-logo">
-                    <img src="images/brands/brand2.png" alt="Brand Partner">
-                </div>
-                <div class="brand-logo">
-                    <img src="images/brands/brand3.png" alt="Brand Partner">
-                </div>
-                <div class="brand-logo">
-                    <img src="images/brands/brand4.png" alt="Brand Partner">
-                </div>
-                <div class="brand-logo">
-                    <img src="images/brands/brand5.png" alt="Brand Partner">
-                </div>
-                <div class="brand-logo">
-                    <img src="images/brands/brand6.png" alt="Brand Partner">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download Catalog CTA -->
-    <section class="catalog-cta">
-        <div class="container">
-            <div class="catalog-content">
-                <div class="catalog-icon">
-                    <i class="fas fa-file-pdf"></i>
-                </div>
-                <div class="catalog-text">
-                    <span class="catalog-eyebrow">— PRODUCT CATALOG —</span>
-                    <h3>Download Our Full Collection</h3>
-                    <p>Browse our complete range of products with detailed specifications and pricing — all in one PDF.</p>
-                </div>
-                <a href="#" class="catalog-btn">
-                    <span>Download Catalog</span>
-                    <span class="catalog-btn-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                <a href="#accessories" class="cat-nav-btn">
+                    <i class="fas fa-wrench"></i> Accessories
                 </a>
             </div>
         </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════════════════════════
+         CATEGORY 01 — ELECTRIC STORAGE
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="electric-storage" class="prod-section">
+        <div class="container">
+            <div class="prod-section-header">
+                <div class="prod-section-icon"><i class="fas fa-plug"></i></div>
+                <div class="prod-section-meta">
+                    <span class="prod-section-eyebrow">— CATEGORY 01 —</span>
+                    <h2 class="prod-section-title">Electric Storage Water Heaters</h2>
+                    <p class="prod-section-desc">Store hot water ready on demand — available in 10L to 80L to suit every household size. Enamel-coated tanks, adjustable thermostats, and multi-layer safety protection.</p>
+                </div>
+            </div>
+
+            <div class="prod-grid">
+
+                <!-- TK-EWH-010 -->
+                <div class="prod-card">
+                    <div class="prod-img-wrap prod-img-light">
+                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=450&fit=crop" alt="Tekcon ThermoStore 10L">
+                        <span class="prod-badge badge-new">Compact</span>
+                        <span class="prod-model-chip">TK-EWH-010</span>
+                    </div>
+                    <div class="prod-body">
+                        <h3 class="prod-name">ThermoStore 10L</h3>
+                        <p class="prod-short-desc">Ideal compact heater for single bathrooms and studio apartments.</p>
+                        <div class="prod-specs">
+                            <span class="spec-pill"><i class="fas fa-tint"></i> 10 L</span>
+                            <span class="spec-pill"><i class="fas fa-bolt"></i> 1.5 kW</span>
+                            <span class="spec-pill"><i class="fas fa-compress-arrows-alt"></i> 8 Bar</span>
+                            <span class="spec-pill"><i class="fas fa-plug"></i> 220V</span>
+                        </div>
+                        <ul class="prod-features">
+                            <li><i class="fas fa-check"></i> Rapid heat-up element</li>
+                            <li><i class="fas fa-check"></i> Anti-corrosion enamel inner tank</li>
+                            <li><i class="fas fa-check"></i> Built-in pressure relief valve</li>
+                            <li><i class="fas fa-check"></i> Energy class A rated</li>
+                        </ul>
+                        <p class="prod-best-for"><i class="fas fa-home"></i> Best for: Single user, small bathroom</p>
+                    </div>
+                    <div class="prod-footer">
+                        <a href="contact.html" class="prod-enquire-btn">
+                            <i class="fas fa-paper-plane"></i> Enquire About This Product
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TK-EWH-030 -->
+                <div class="prod-card">
+                    <div class="prod-img-wrap prod-img-light">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=450&fit=crop" alt="Tekcon ThermoStore 30L">
+                        <span class="prod-badge badge-popular">Popular</span>
+                        <span class="prod-model-chip">TK-EWH-030</span>
+                    </div>
+                    <div class="prod-body">
+                        <h3 class="prod-name">ThermoStore 30L</h3>
+                        <p class="prod-short-desc">The most popular choice for small families and two-person households.</p>
+                        <div class="prod-specs">
+                            <span class="spec-pill"><i class="fas fa-tint"></i> 30 L</span>
+                            <span class="spec-pill"><i class="fas fa-bolt"></i> 2.0 kW</span>
+                            <span class="spec-pill"><i class="fas fa-compress-arrows-alt"></i> 8 Bar</span>
+                            <span class="spec-pill"><i class="fas fa-plug"></i> 220V</span>
+                        </div>
+                        <ul class="prod-features">
+                            <li><i class="fas fa-check"></i> Enamel-coated steel inner tank</li>
+                            <li><i class="fas fa-check"></i> Adjustable thermostat (35–75 °C)</li>
+                            <li><i class="fas fa-check"></i> Automatic thermal cut-off</li>
+                            <li><i class="fas fa-check"></i> Vertical or horizontal installation</li>
+                        </ul>
+                        <p class="prod-best-for"><i class="fas fa-home"></i> Best for: 2–3 users, family bathroom</p>
+                    </div>
+                    <div class="prod-footer">
+                        <a href="contact.html" class="prod-enquire-btn">
+                            <i class="fas fa-paper-plane"></i> Enquire About This Product
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TK-EWH-050 -->
+                <div class="prod-card">
+                    <div class="prod-img-wrap prod-img-light">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=450&fit=crop" alt="Tekcon ThermoStore 50L">
+                        <span class="prod-badge badge-bestseller">Best Seller</span>
+                        <span class="prod-model-chip">TK-EWH-050</span>
+                    </div>
+                    <div class="prod-body">
+                        <h3 class="prod-name">ThermoStore 50L</h3>
+                        <p class="prod-short-desc">Our best-selling model — perfect for families of four and multi-bathroom homes.</p>
+                        <div class="prod-specs">
+                            <span class="spec-pill"><i class="fas fa-tint"></i> 50 L</span>
+                            <span class="spec-pill"><i class="fas fa-bolt"></i> 2.0 kW</span>
+                            <span class="spec-pill"><i class="fas fa-compress-arrows-alt"></i> 8 Bar</span>
+                            <span class="spec-pill"><i class="fas fa-plug"></i> 220V</span>
+                        </div>
+                        <ul class="prod-features">
+                            <li><i class="fas fa-check"></i> Digital temperature LED display</li>
+                            <li><i class="fas fa-check"></i> Magnesium anode rod protection</li>
+                            <li><i class="fas fa-check"></i> Child safety lock</li>
+                            <li><i class="fas fa-check"></i> 2-year full manufacturer warranty</li>
+                        </ul>
+                        <p class="prod-best-for"><i class="fas fa-home"></i> Best for: Family of 4–5, two bathrooms</p>
+                    </div>
+                    <div class="prod-footer">
+                        <a href="contact.html" class="prod-enquire-btn">
+                            <i class="fas fa-paper-plane"></i> Enquire About This Product
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TK-EWH-080 -->
+                <div class="prod-card">
+                    <div class="prod-img-wrap prod-img-light">
+                        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&h=450&fit=crop" alt="Tekcon ThermoStore 80L">
+                        <span class="prod-badge badge-popular">Commercial</span>
+                        <span class="prod-model-chip">TK-EWH-080</span>
+                    </div>
+                    <div class="prod-body">
+                        <h3 class="prod-name">ThermoStore 80L</h3>
+                        <p class="prod-short-desc">Heavy-duty storage heater for apartments, guesthouses, and commercial buildings.</p>
+                        <div class="prod-specs">
+                            <span class="spec-pill"><i class="fas fa-tint"></i> 80 L</span>
+                            <span class="spec-pill"><i class="fas fa-bolt"></i> 2.5 kW</span>
+                            <span class="spec-pill"><i class="fas fa-compress-arrows-alt"></i> 8 Bar</span>
+                            <span class="spec-pill"><i class="fas fa-plug"></i> 220V</span>
+                        </div>
+                        <ul class="prod-features">
+                            <li><i class="fas fa-check"></i> Commercial-grade stainless inner tank</li>
+                            <li><i class="fas fa-check"></i> Smart thermostat with 24h timer</li>
+                            <li><i class="fas fa-check"></i> Titanium heating element</li>
+                            <li><i class="fas fa-check"></i> Stainless steel exterior casing</li>
+                        </ul>
+                        <p class="prod-best-for"><i class="fas fa-building"></i> Best for: Guesthouses, apartments, 6+ users</p>
+                    </div>
+                    <div class="prod-footer">
+                        <a href="contact.html" class="prod-enquire-btn">
+                            <i class="fas fa-paper-plane"></i> Enquire About This Product
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- ══════════════════════════════════════════════════════════
+         CATEGORY 02 — INSTANT ELECTRIC
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="instant" class="prod-section alt">
+        <div class="container">
+            <div class="prod-section-header">
+                <div class="prod-section-icon"><i class="fas fa-bolt"></i></div>
+                <div class="prod-section-meta">
+                    <span class="prod-section-eyebrow">— CATEGORY 02 —</span>
+                    <h2 class="prod-section-title">Instant Electric Water Heaters</h2>
+                    <p class="prod-section-desc">No waiting, no tank — hot water the moment you turn the tap. Wall-mounted, space-saving, and perfect for apartments where storage space is limited.</p>
+                </div>
+            </div>
+
+            <div class="prod-grid">
+
+                <!-- TK-IWH-035 -->
+                <div class="prod-card">
+                    <div class="prod-img-wrap prod-img-light">
+                        <img src="https://images.unsplash.com/photo-1594550209428-24e5abe4f0e0?w=600&h=450&fit=crop" alt="InstantFlow 3.5kW">
+                        <span class="prod-badge badge-instant">Instant Heat</span>
+                        <span class="prod-model-chip">TK-IWH-035</span>
+                    </div>
+                    <div class="prod-body">
+                        <h3 class="prod-name">InstantFlow 3.5 kW</h3>
+                        <p class="prod-short-desc">Compact tankless heater — ideal for single showers and small apartments.</p>
+                        <div class="prod-specs">
+                            <span class="spec-pill"><i class="fas fa-bolt"></i> 3.5 kW</span>
+                            <span class="spec-pill"><i class="fas fa-water"></i> 4 L/min</span>
+                            <span class="spec-pill"><i class="fas fa-plug"></i> 220V</span>
+                        </div>
+                        <ul class="prod-features">
+                            <li><i class="fas fa-check"></i> Zero wait time — hot water instantly</li>
+                            <li><i class="fas fa-check"></i> Ultra-compact wall-mount design</li>
+                            <li><i class="fas fa-check"></i> Automatic temperature regulation</li>
+                            <li><i class="fas fa-check"></i> Overheat &amp; dry-fire protection</li>
+                        </ul>
+                        <p class="prod-best-for"><i class="fas fa-home"></i> Best for: Single shower, small apartment</p>
+                    </div>
+                    <div class="prod-footer">
+                        <a href="contact.html" class="prod-enquire-btn">
+                            <i class="fas fa-paper-plane"></i> Enquire About This Product
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TK-IWH-055 -->
+                <div class="prod-card">
+                    <div class="prod-img-wrap prod-img-light">
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=450&fit=crop" alt="InstantFlow 5.5kW">
+                        <span class="prod-badge badge-popular">Popular</span>
+                        <span class="prod-model-chip">TK-IWH-055</span>
+                    </div>
+                    <div class="prod-body">
+                        <h3 class="prod-name">InstantFlow 5.5 kW</h3>
+                        <p class="prod-short-desc">High-flow instant heater suitable for shower plus basin in family use.</p>
+                        <div class="prod-specs">
+                            <span class="spec-pill"><i class="fas fa-bolt"></i> 5.5 kW</span>
+                            <span class="spec-pill"><i class="fas fa-water"></i> 6 L/min</span>
+                            <span class="spec-pill"><i class="fas fa-plug"></i> 220V</span>
+                        </div>
+                        <ul class="prod-features">
+                            <li><i class="fas fa-check"></i> High-flow output for family use</li>
+                            <li><i class="fas fa-check"></i> Digital LED temperature display</li>
+                            <li><i class="fas fa-check"></i> Anti-limescale heating element</li>
+                            <li><i class="fas fa-check"></i> Automatic pressure shut-off valve</li>
+                        </ul>
+                        <p class="prod-best-for"><i class="fas fa-home"></i> Best for: Shower + basin, family use</p>
+                    </div>
+                    <div class="prod-footer">
+                        <a href="contact.html" class="prod-enquire-btn">
+                            <i class="fas fa-paper-plane"></i> Enquire About This Product
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         CATEGORY 03 — SOLAR
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="solar" class="prod-section">
+        <div class="container">
+            <div class="prod-section-header">
+                <div class="prod-section-icon"><i class="fas fa-sun"></i></div>
+                <div class="prod-section-meta">
+                    <span class="prod-section-eyebrow">— CATEGORY 03 —</span>
+                    <h2 class="prod-section-title">Solar Water Heaters</h2>
+                    <p class="prod-section-desc">Harness Ethiopia's abundant sunshine for virtually free hot water. Evacuated tube systems work even on cloudy days — with a backup electric element for all-weather reliability.</p>
+                </div>
+            </div>
+
+            <div class="prod-grid">
+
+                <!-- TK-SOL-150 -->
+                <div class="prod-card">
+                    <div class="prod-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&h=450&fit=crop" alt="SolarWarm 150L">
+                        <span class="prod-badge badge-solar">Solar ☀</span>
+                        <span class="prod-model-chip">TK-SOL-150</span>
+                    </div>
+                    <div class="prod-body">
+                        <h3 class="prod-name">SolarWarm 150L</h3>
+                        <p class="prod-short-desc">High-efficiency evacuated tube system for villas and family homes.</p>
+                        <div class="prod-specs">
+                            <span class="spec-pill"><i class="fas fa-tint"></i> 150 L</span>
+                            <span class="spec-pill"><i class="fas fa-solar-panel"></i> 15 Tubes</span>
+                            <span class="spec-pill"><i class="fas fa-leaf"></i> Solar</span>
+                        </div>
+                        <ul class="prod-features">
+                            <li><i class="fas fa-check"></i> Evacuated tube collector</li>
+                            <li><i class="fas fa-check"></i> Effective even on cloudy days</li>
+                            <li><i class="fas fa-check"></i> Backup electric element included</li>
+                            <li><i class="fas fa-check"></i> 5-year inner tank warranty</li>
+                        </ul>
+                        <p class="prod-best-for"><i class="fas fa-home"></i> Best for: Villa, family home</p>
+                    </div>
+                    <div class="prod-footer">
+                        <a href="contact.html" class="prod-enquire-btn">
+                            <i class="fas fa-paper-plane"></i> Enquire About This Product
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TK-SOL-200 -->
+                <div class="prod-card">
+                    <div class="prod-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=450&fit=crop" alt="SolarWarm 200L">
+                        <span class="prod-badge badge-solar">Solar ☀</span>
+                        <span class="prod-model-chip">TK-SOL-200</span>
+                    </div>
+                    <div class="prod-body">
+                        <h3 class="prod-name">SolarWarm 200L</h3>
+                        <p class="prod-short-desc">Larger-capacity solar system for bigger homes, schools, and small hotels.</p>
+                        <div class="prod-specs">
+                            <span class="spec-pill"><i class="fas fa-tint"></i> 200 L</span>
+                            <span class="spec-pill"><i class="fas fa-solar-panel"></i> 20 Tubes</span>
+                            <span class="spec-pill"><i class="fas fa-leaf"></i> Solar</span>
+                        </div>
+                        <ul class="prod-features">
+                            <li><i class="fas fa-check"></i> High-output for larger households</li>
+                            <li><i class="fas fa-check"></i> Stainless steel inner pressure tank</li>
+                            <li><i class="fas fa-check"></i> Automatic top-up float valve</li>
+                            <li><i class="fas fa-check"></i> Anti-freeze circulation protection</li>
+                        </ul>
+                        <p class="prod-best-for"><i class="fas fa-building"></i> Best for: Large homes, small hotels</p>
+                    </div>
+                    <div class="prod-footer">
+                        <a href="contact.html" class="prod-enquire-btn">
+                            <i class="fas fa-paper-plane"></i> Enquire About This Product
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         CATEGORY 04 — GAS
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="gas" class="prod-section alt">
+        <div class="container">
+            <div class="prod-section-header">
+                <div class="prod-section-icon"><i class="fas fa-fire"></i></div>
+                <div class="prod-section-meta">
+                    <span class="prod-section-eyebrow">— CATEGORY 04 —</span>
+                    <h2 class="prod-section-title">Gas Water Heaters</h2>
+                    <p class="prod-section-desc">The ideal solution for areas with unreliable electricity. LPG and natural gas models with instant piezo ignition, flame-failure safety devices, and high continuous flow rates.</p>
+                </div>
+            </div>
+
+            <div class="prod-grid">
+
+                <!-- TK-GAS-006 -->
+                <div class="prod-card">
+                    <div class="prod-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=450&fit=crop" alt="GasFlow 6L">
+                        <span class="prod-badge badge-gas">Gas</span>
+                        <span class="prod-model-chip">TK-GAS-006</span>
+                    </div>
+                    <div class="prod-body">
+                        <h3 class="prod-name">GasFlow 6L/min</h3>
+                        <p class="prod-short-desc">Reliable and affordable gas heater — perfect for homes with LPG.</p>
+                        <div class="prod-specs">
+                            <span class="spec-pill"><i class="fas fa-fire"></i> LPG / Gas</span>
+                            <span class="spec-pill"><i class="fas fa-water"></i> 6 L/min</span>
+                        </div>
+                        <ul class="prod-features">
+                            <li><i class="fas fa-check"></i> Piezo instant ignition</li>
+                            <li><i class="fas fa-check"></i> Flame failure safety device</li>
+                            <li><i class="fas fa-check"></i> Balanced flue — no chimney required</li>
+                            <li><i class="fas fa-check"></i> Simple temperature control knob</li>
+                        </ul>
+                        <p class="prod-best-for"><i class="fas fa-bolt"></i> Best for: Off-grid, unstable power areas</p>
+                    </div>
+                    <div class="prod-footer">
+                        <a href="contact.html" class="prod-enquire-btn">
+                            <i class="fas fa-paper-plane"></i> Enquire About This Product
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TK-GAS-016 -->
+                <div class="prod-card">
+                    <div class="prod-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=450&fit=crop" alt="GasFlow 16L">
+                        <span class="prod-badge badge-gas">Commercial</span>
+                        <span class="prod-model-chip">TK-GAS-016</span>
+                    </div>
+                    <div class="prod-body">
+                        <h3 class="prod-name">GasFlow 16L/min</h3>
+                        <p class="prod-short-desc">High-capacity commercial gas heater for hotels, guesthouses and clinics.</p>
+                        <div class="prod-specs">
+                            <span class="spec-pill"><i class="fas fa-fire"></i> LPG / Gas</span>
+                            <span class="spec-pill"><i class="fas fa-water"></i> 16 L/min</span>
+                        </div>
+                        <ul class="prod-features">
+                            <li><i class="fas fa-check"></i> High-flow continuous output</li>
+                            <li><i class="fas fa-check"></i> Digital temperature control display</li>
+                            <li><i class="fas fa-check"></i> Multiple built-in safety sensors</li>
+                            <li><i class="fas fa-check"></i> Eco-combustion technology</li>
+                        </ul>
+                        <p class="prod-best-for"><i class="fas fa-building"></i> Best for: Hotels, guesthouses, commercial</p>
+                    </div>
+                    <div class="prod-footer">
+                        <a href="contact.html" class="prod-enquire-btn">
+                            <i class="fas fa-paper-plane"></i> Enquire About This Product
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         CATEGORY 05 — ACCESSORIES
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="accessories" class="prod-section">
+        <div class="container">
+            <div class="prod-section-header">
+                <div class="prod-section-icon"><i class="fas fa-wrench"></i></div>
+                <div class="prod-section-meta">
+                    <span class="prod-section-eyebrow">— CATEGORY 05 —</span>
+                    <h2 class="prod-section-title">Accessories &amp; Spare Parts</h2>
+                    <p class="prod-section-desc">Genuine Tekcon parts and accessories to keep your water heater running at peak performance for years. All parts are in stock at our Addis Ababa store.</p>
+                </div>
+            </div>
+
+            <div class="prod-grid">
+
+                <div class="prod-card">
+                    <div class="prod-img-wrap acc-icon-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <span class="prod-model-chip">TK-ACC-PRV</span>
+                    </div>
+                    <div class="prod-body">
+                        <h3 class="prod-name">Pressure Relief Valve</h3>
+                        <p class="prod-short-desc">Universal safety valve — protects your tank from over-pressure. Fits all Tekcon storage heaters.</p>
+                        <div class="prod-specs">
+                            <span class="spec-pill"><i class="fas fa-compress-arrows-alt"></i> 8 Bar Rated</span>
+                            <span class="spec-pill"><i class="fas fa-link"></i> Universal Fit</span>
+                        </div>
+                        <ul class="prod-features">
+                            <li><i class="fas fa-check"></i> Certified to 8 bar working pressure</li>
+                            <li><i class="fas fa-check"></i> Solid brass corrosion-resistant body</li>
+                            <li><i class="fas fa-check"></i> Fits all Tekcon storage heaters</li>
+                        </ul>
+                    </div>
+                    <div class="prod-footer">
+                        <a href="contact.html" class="prod-enquire-btn">
+                            <i class="fas fa-paper-plane"></i> Order This Part
+                        </a>
+                    </div>
+                </div>
+
+                <div class="prod-card">
+                    <div class="prod-img-wrap acc-icon-card">
+                        <i class="fas fa-magnet"></i>
+                        <span class="prod-model-chip">TK-ACC-ANO</span>
+                    </div>
+                    <div class="prod-body">
+                        <h3 class="prod-name">Magnesium Anode Rod</h3>
+                        <p class="prod-short-desc">Sacrificial anode rod that prevents inner tank rust — extends heater lifespan by 5+ years.</p>
+                        <div class="prod-specs">
+                            <span class="spec-pill"><i class="fas fa-leaf"></i> Anti-Rust</span>
+                            <span class="spec-pill"><i class="fas fa-link"></i> Universal</span>
+                        </div>
+                        <ul class="prod-features">
+                            <li><i class="fas fa-check"></i> Extends tank service life by 5+ years</li>
+                            <li><i class="fas fa-check"></i> Prevents corrosion and rust</li>
+                            <li><i class="fas fa-check"></i> Easy DIY or technician replacement</li>
+                        </ul>
+                    </div>
+                    <div class="prod-footer">
+                        <a href="contact.html" class="prod-enquire-btn">
+                            <i class="fas fa-paper-plane"></i> Order This Part
+                        </a>
+                    </div>
+                </div>
+
+                <div class="prod-card">
+                    <div class="prod-img-wrap acc-icon-card">
+                        <i class="fas fa-thermometer-half"></i>
+                        <span class="prod-model-chip">TK-ACC-THM</span>
+                    </div>
+                    <div class="prod-body">
+                        <h3 class="prod-name">Replacement Thermostat</h3>
+                        <p class="prod-short-desc">OEM-grade thermostat for all Tekcon electric storage heaters.</p>
+                        <div class="prod-specs">
+                            <span class="spec-pill"><i class="fas fa-thermometer-half"></i> 35–75 °C</span>
+                            <span class="spec-pill"><i class="fas fa-link"></i> OEM Grade</span>
+                        </div>
+                        <ul class="prod-features">
+                            <li><i class="fas fa-check"></i> Precise temperature control</li>
+                            <li><i class="fas fa-check"></i> Built-in overheat safety cut-out</li>
+                            <li><i class="fas fa-check"></i> Direct OEM replacement</li>
+                        </ul>
+                    </div>
+                    <div class="prod-footer">
+                        <a href="contact.html" class="prod-enquire-btn">
+                            <i class="fas fa-paper-plane"></i> Order This Part
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Why Tekcon Strip ──────────────────────────────────── -->
+    <section class="why-strip">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-award"></i></div>
+                    <h4>20 Years of Expertise</h4>
+                    <p>Founded in 2004 by Ato Tekeba Brhine — two decades at the forefront of Ethiopian water heating</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-tools"></i></div>
+                    <h4>Professional Installation</h4>
+                    <p>Certified technicians install every unit safely, anywhere in Addis Ababa and beyond</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>2-Year Warranty</h4>
+                    <p>Electric heaters come with 2-year warranty. Solar systems carry a 5-year tank warranty</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-headset"></i></div>
+                    <h4>After-Sales Support</h4>
+                    <p>Genuine spare parts, maintenance visits, and a technical helpline always available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <span class="cta-eyebrow">— EXPERT GUIDANCE —</span>
-                <h2>Need Help Choosing the Right Materials?</h2>
-                <p>Our expert team is ready to assist you with product selection and technical specifications</p>
+                <span class="cta-eyebrow">— CONTACT US —</span>
+                <h2>Not Sure Which Water Heater to Choose?</h2>
+                <p>Our expert team will recommend the perfect solution for your home or business — free consultation, no obligation.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
-                    <a href="tel:+251XXXXXXXX" class="btn btn-light btn-large">
-                        <i class="fas fa-phone"></i> Call Now
-                    </a>
+                    <a href="contact.html" class="btn btn-primary btn-large">Contact Us Today</a>
+                    <a href="tel:+251XXXXXXXX" class="btn btn-light btn-large"><i class="fas fa-phone"></i> Call Now</a>
                 </div>
             </div>
         </div>
@@ -641,15 +1027,15 @@
         <div class="container">
             <div class="footer-top">
                 <a href="index.html" class="footer-brand">
-                    <img src="images/company-logo.png" alt="TEKCON logo" class="footer-logo-img">
+                    <img src="images/company-logo.png" alt="Tekcon Ethiopia" class="footer-logo-img">
                 </a>
                 <p class="footer-stay-connected">
-                    Let's stay connected — get the latest updates, insights, and stories from the field.
+                    Ethiopia's trusted water heating solutions partner — hot water for every home, every day.
                 </p>
             </div>
 
             <div class="footer-statement-row">
-                <h2 class="footer-statement">Building better cities, one project at a time</h2>
+                <h2 class="footer-statement">Warm homes, happy families — since 2004</h2>
                 <form class="footer-subscribe" onsubmit="event.preventDefault();">
                     <label for="footer-email" class="footer-subscribe-label">Subscribe to Our Updates:</label>
                     <div class="footer-subscribe-field">
@@ -665,32 +1051,43 @@
 
             <div class="footer-nav-row">
                 <nav class="footer-nav">
-                    <a href="about.html">Our Expertise</a>
-                    <a href="projects.html">Featured Projects</a>
-                    <a href="blog.html">Insights & News</a>
-                    <a href="about.html">Who We Are</a>
+                    <a href="about.html">About Tekcon</a>
+                    <a href="products.html">Our Products</a>
+                    <a href="blog.html">Insights &amp; Tips</a>
+                    <a href="contact.html">Contact Us</a>
                 </nav>
                 <div class="footer-social">
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                    <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
                 </div>
             </div>
 
-            <p class="footer-copyright">© 2025 GARA Construction Solutions PLC — All rights reserved</p>
+            <p class="footer-copyright">© 2025 Tekcon Ethiopia — All rights reserved</p>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    
-    <!-- Supabase Client -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
-    <!-- Supabase Configuration -->
     <script src="js/supabase-config.js"></script>
-    
-    <!-- Supabase Content Loader -->
     <script src="js/supabase-content-loader.js"></script>
+    <script src="js/ai-chat.js"></script>
+
+    <script>
+        // Active state for category nav on scroll
+        const catBtns = document.querySelectorAll('.cat-nav-btn');
+        const sections = document.querySelectorAll('section[id]');
+        const onScroll = () => {
+            let cur = '';
+            sections.forEach(s => {
+                if (window.scrollY >= s.offsetTop - 160) cur = s.id;
+            });
+            catBtns.forEach(b => {
+                b.classList.toggle('active', b.getAttribute('href') === '#' + cur);
+            });
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+    </script>
+
 </body>
 </html>
