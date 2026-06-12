@@ -1,4 +1,4 @@
-// ============================================================
+﻿// ============================================================
 // ai-chat.js — Floating AI Chat Widget
 // GARA Construction Solutions PLC
 // Talks to Express backend at localhost:5000/api/chat
@@ -245,7 +245,7 @@
             // Show welcome + chips on first open
             if (!hasOpened) {
                 hasOpened = true;
-                appendMessage('ai', '👋 ሰላም! I\'m your **Tekcon Assistant** — here to help you find the right water heater for your home or business. What can I help you with? / Hello! Ask me about our electric, solar, or gas water heaters.');
+                appendMessage('ai', '👋 Hello! I\'m your **Tekcon Assistant** — here to help you find the right water heater for your home or business. What can I help you with? / Hello! Ask me about our electric, solar, or gas water heaters.');
                 setTimeout(renderSuggestions, 350);
             }
         }
