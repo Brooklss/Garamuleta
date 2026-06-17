@@ -1,15 +1,951 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tekcon Ethiopia — 20 years of bathroom water heating solutions. Electric, solar & gas water heaters for every Ethiopian home.">
-    <title>Tekcon Ethiopia | Water Heating Solutions</title>
+    <meta name="description"
+        content="Tekcon Ethiopia — #1 Bathroom Water Heating Solution in Ethiopia. Official Midea partner. Cylinder Series L & Instant-Solo DSK45V. 20+ years of excellence.">
+    <title>Tekcon Ethiopia | #1 Bathroom Water Heating Solution in Ethiopia</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile-enhancements.css">
     <link rel="stylesheet" href="css/ai-chat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ── Landing page overrides for full-width, premium sales look ── */
+        body { font-family: 'Inter', sans-serif; }
+
+        /* ─── HERO full-bleed ─── */
+        .hero-sales {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #040c07 0%, #0a1a0f 50%, #0d2116 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+            padding: 0;
+        }
+        .hero-sales::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 80% 50%, rgba(30,76,56,0.25) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 10% 80%, rgba(136,178,145,0.08) 0%, transparent 60%);
+        }
+        .hero-sales-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+            align-items: center;
+        }
+        .hero-left {
+            padding: 8rem 4rem 6rem 8%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+        .hero-partner-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(136,178,145,0.25);
+            border-radius: 50px;
+            padding: 0.5rem 1.2rem 0.5rem 0.6rem;
+            width: fit-content;
+        }
+        .hero-partner-badge img {
+            height: 26px;
+            filter: brightness(1.1);
+        }
+        .hero-partner-badge span {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #88B291;
+        }
+        .hero-sales h1 {
+            font-size: clamp(2.8rem, 5vw, 4.4rem);
+            font-weight: 900;
+            color: #f0f8f3;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin: 0;
+        }
+        .hero-sales h1 .accent {
+            background: linear-gradient(90deg, #88B291, #5ab87a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-tagline {
+            font-size: 1.1rem;
+            color: #7a9e84;
+            line-height: 1.7;
+            max-width: 480px;
+            margin: 0;
+        }
+        .hero-tagline strong { color: #88B291; font-weight: 700; }
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-hero-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, #1E4C38, #2e7054);
+            color: #fff;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 8px 30px rgba(30,76,56,0.4);
+        }
+        .btn-hero-primary:hover {
+            background: linear-gradient(135deg, #2e7054, #88B291);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(30,76,56,0.5);
+            color: #fff;
+        }
+        .btn-hero-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: 1.5px solid rgba(136,178,145,0.4);
+            color: #88B291;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-hero-outline:hover {
+            border-color: #88B291;
+            background: rgba(136,178,145,0.08);
+        }
+        .hero-proof-row {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .hero-proof-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .hero-proof-item strong {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #f0f8f3;
+            line-height: 1;
+        }
+        .hero-proof-item span {
+            font-size: 0.72rem;
+            color: #5a7264;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.25rem;
+        }
+        .hero-right {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .hero-product-showcase {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-product-showcase img.main-product {
+            height: 82vh;
+            width: auto;
+            max-width: 90%;
+            object-fit: contain;
+            filter: drop-shadow(0 40px 80px rgba(0,0,0,0.6)) drop-shadow(0 0 60px rgba(136,178,145,0.15));
+            animation: floatProduct 6s ease-in-out infinite;
+        }
+        @keyframes floatProduct {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-18px); }
+        }
+        .hero-product-badge {
+            position: absolute;
+            background: rgba(10,26,15,0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(136,178,145,0.25);
+            border-radius: 16px;
+            padding: 0.9rem 1.3rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .hero-product-badge.top-right {
+            top: 12%;
+            right: 5%;
+        }
+        .hero-product-badge.bottom-left {
+            bottom: 14%;
+            left: 3%;
+        }
+        .hero-product-badge .badge-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #88B291;
+            margin-bottom: 0.25rem;
+        }
+        .hero-product-badge .badge-val {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #f0f8f3;
+        }
+        .hero-product-badge .badge-sub {
+            font-size: 0.7rem;
+            color: #5a7264;
+            margin-top: 0.15rem;
+        }
+        /* Scroll indicator */
+        .hero-scroll-hint {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3d5447;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .hero-scroll-hint .line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(180deg, transparent, rgba(136,178,145,0.4));
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        /* ─── PARTNER TRUST BAR ─── */
+        .trust-bar {
+            background: #060e09;
+            border-top: 1px solid rgba(136,178,145,0.08);
+            border-bottom: 1px solid rgba(136,178,145,0.08);
+            padding: 1.8rem 0;
+        }
+        .trust-bar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .trust-bar-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #3d5447;
+            white-space: nowrap;
+        }
+        .trust-bar-divider {
+            width: 1px;
+            height: 28px;
+            background: rgba(136,178,145,0.15);
+        }
+        .trust-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #5a7264;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+        .trust-bar-item i { color: #88B291; font-size: 0.9rem; }
+        .trust-bar-logo {
+            height: 28px;
+            filter: grayscale(0.3) brightness(1.1);
+            opacity: 0.8;
+        }
+
+        /* ─── HEADLINE SECTION ─── */
+        .headline-section {
+            background: #f5f9f6;
+            padding: 7rem 0;
+        }
+        .headline-section .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 4%;
+        }
+        /* Force dark text for light bg sections */
+        .headline-section,
+        .headline-section .headline-text h2,
+        .headline-section .headline-text p,
+        .headline-section .h-stat strong,
+        .headline-section .h-stat span {
+            color: #0d1f14;
+        }
+        .headline-section .headline-text p,
+        .headline-section .h-stat span {
+            color: #4a6454;
+        }
+        .headline-section .h-stat strong {
+            color: #1E4C38;
+        }
+        .headline-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .headline-text .eyebrow {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #1E4C38;
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+        .headline-text h2 {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 900;
+            color: #0d1f14;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin: 0 0 1.5rem;
+        }
+        .headline-text p {
+            font-size: 1rem;
+            color: #4a6454;
+            line-height: 1.75;
+            margin: 0 0 2rem;
+        }
+        .headline-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .h-stat {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(30,76,56,0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        .h-stat strong {
+            display: block;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #1E4C38;
+            line-height: 1;
+        }
+        .h-stat span {
+            font-size: 0.78rem;
+            color: #6a8070;
+            font-weight: 600;
+            margin-top: 0.35rem;
+            display: block;
+        }
+        .headline-image-wrap {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+        .headline-image-wrap img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        .headline-awards-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(10,26,15,0.7) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+        }
+        .headline-awards-text {
+            color: white;
+        }
+        .headline-awards-text .awards-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #88B291;
+            margin-bottom: 0.4rem;
+            display: block;
+        }
+        .headline-awards-text h4 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin: 0;
+        }
+        .headline-awards-text p {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.65);
+            margin: 0.3rem 0 0;
+        }
+
+        /* ─── MAIN PRODUCTS SECTION (Minimal) ─── */
+        .main-products {
+            background: #050d08;
+            padding: 7rem 0;
+        }
+        .main-products .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 4%;
+        }
+        .section-eyebrow-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        .section-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #88B291;
+        }
+        .section-eyebrow-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(136,178,145,0.15);
+            margin-left: 1.5rem;
+        }
+        .main-products-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+        .main-products-header h2 {
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            font-weight: 900;
+            color: #f0f8f3;
+            letter-spacing: -0.03em;
+            margin: 0.5rem 0 1rem;
+        }
+        .main-products-header p {
+            font-size: 1rem;
+            color: #5a7264;
+            max-width: 580px;
+            line-height: 1.7;
+            margin: 0 auto;
+        }
+        /* Minimal product gallery */
+        .minimal-product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .minimal-product-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+        }
+        .minimal-product-img-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .minimal-product-img-wrap img {
+            max-height: 320px;
+            width: auto;
+            max-width: 85%;
+            object-fit: contain;
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.5)) drop-shadow(0 0 40px rgba(136,178,145,0.08));
+            transition: transform 0.5s cubic-bezier(.22,.68,0,1.1);
+            animation: floatProduct 6s ease-in-out infinite;
+        }
+        .minimal-product-item:nth-child(2) .minimal-product-img-wrap img {
+            animation-delay: -3s;
+        }
+        .minimal-product-item:hover .minimal-product-img-wrap img {
+            transform: translateY(-12px) scale(1.04);
+        }
+        .minimal-product-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .minimal-product-series {
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #88B291;
+        }
+        .minimal-product-name {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #f0f8f3;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+        .minimal-product-desc {
+            font-size: 0.85rem;
+            color: #5a7264;
+            line-height: 1.5;
+            margin: 0;
+            max-width: 340px;
+        }
+        .minimal-product-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+            color: #88B291;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+        .minimal-product-cta:hover {
+            color: #f0f8f3;
+            gap: 0.7rem;
+        }
+        .minimal-product-cta i {
+            font-size: 0.7rem;
+            transition: transform 0.25s;
+        }
+        .minimal-product-item:hover .minimal-product-cta i {
+            transform: translateX(4px);
+        }
+        /* Coming soon cards */
+        .coming-soon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .coming-soon-card {
+            background: #0c1710;
+            border: 1px solid rgba(136,178,145,0.07);
+            border-radius: 18px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .coming-soon-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(136,178,145,0.03) 0%, transparent 60%);
+        }
+        .cs-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: rgba(255,190,50,0.1);
+            border: 1px solid rgba(255,190,50,0.25);
+            border-radius: 6px;
+            padding: 0.25rem 0.65rem;
+            font-size: 0.6rem;
+            font-weight: 800;
+            color: #f2a900;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            width: fit-content;
+        }
+        .cs-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(136,178,145,0.07);
+            border: 1px solid rgba(136,178,145,0.13);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #88B291;
+            font-size: 1.3rem;
+        }
+        .cs-name {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #c8d8cc;
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+        .cs-desc {
+            font-size: 0.78rem;
+            color: #3d5447;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ─── MIDEA PARTNERSHIP SECTION ─── */
+        .midea-section {
+            background: linear-gradient(180deg, #f5f9f6 0%, #eef4f0 100%);
+            padding: 7rem 0;
+        }
+        .midea-section .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 4%;
+        }
+        .midea-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        /* Force dark text in midea light section */
+        .midea-section .midea-content h2,
+        .midea-section .midea-fact strong {
+            color: #0d1f14;
+        }
+        .midea-section .midea-content p,
+        .midea-section .midea-fact span {
+            color: #4a6454;
+        }
+        .midea-content .eyebrow {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #1E4C38;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .midea-content h2 {
+            font-size: clamp(1.9rem, 3vw, 2.7rem);
+            font-weight: 900;
+            color: #0d1f14;
+            letter-spacing: -0.03em;
+            margin: 0 0 1.2rem;
+            line-height: 1.15;
+        }
+        .midea-content p {
+            font-size: 1rem;
+            color: #4a6454;
+            line-height: 1.75;
+            margin: 0 0 1.5rem;
+        }
+        .midea-logo-big {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .midea-logo-big img {
+            height: 44px;
+        }
+        .midea-logo-big .midea-verified {
+            background: #1E4C38;
+            color: #88B291;
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.35rem 0.8rem;
+            border-radius: 6px;
+        }
+        .midea-facts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .midea-fact {
+            background: white;
+            border-radius: 14px;
+            padding: 1.2rem;
+            border: 1px solid rgba(30,76,56,0.07);
+        }
+        .midea-fact i {
+            color: #1E4C38;
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+        .midea-fact strong {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: #0d1f14;
+            margin-bottom: 0.25rem;
+        }
+        .midea-fact span {
+            font-size: 0.75rem;
+            color: #6a8070;
+        }
+        .midea-awards-img {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.1);
+        }
+        .midea-awards-img img {
+            width: 100%;
+            display: block;
+        }
+
+        /* ─── WHY TEKCON (dark strip) ─── */
+        .why-tekcon-strip {
+            background: #050d08;
+            padding: 6rem 0;
+        }
+        .why-tekcon-strip .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 4%;
+        }
+        .why-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        .why-header .eyebrow {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #88B291;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+        .why-header h2 {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 900;
+            color: #f0f8f3;
+            letter-spacing: -0.03em;
+            margin: 0 0 1rem;
+        }
+        .why-header p {
+            font-size: 1rem;
+            color: #5a7264;
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .why-features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .why-feature-card {
+            background: #0c1710;
+            border: 1px solid rgba(136,178,145,0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        .why-feature-card:hover {
+            border-color: rgba(136,178,145,0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        .wf-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(136,178,145,0.08);
+            border: 1px solid rgba(136,178,145,0.15);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #88B291;
+            font-size: 1.15rem;
+            margin-bottom: 1.2rem;
+        }
+        .wf-title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #e4ede6;
+            margin: 0 0 0.6rem;
+        }
+        .wf-desc {
+            font-size: 0.82rem;
+            color: #5a7264;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ─── TESTIMONIALS ─── */
+        .testimonials {
+            background: #050d08;
+            padding: 0;
+            overflow: visible;
+        }
+
+        /* ─── BLOG PREVIEW dark ─── */
+        .blog-preview { background: #f5f9f6; }
+
+        /* ─── CTA BANNER ─── */
+        .cta-banner {
+            background: linear-gradient(135deg, #0d2116 0%, #1E4C38 50%, #0a1a0f 100%);
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(136,178,145,0.12) 0%, transparent 70%);
+        }
+        .cta-banner .container {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 4%;
+        }
+        .cta-banner .eyebrow {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #88B291;
+            display: block;
+            margin-bottom: 1rem;
+        }
+        .cta-banner h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 900;
+            color: #f0f8f3;
+            letter-spacing: -0.03em;
+            margin: 0 0 1.2rem;
+            line-height: 1.1;
+        }
+        .cta-banner p {
+            font-size: 1.05rem;
+            color: #7a9e84;
+            line-height: 1.7;
+            margin: 0 0 2.5rem;
+        }
+        .cta-banner-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-cta-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: white;
+            color: #1E4C38;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+        .btn-cta-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+        .btn-cta-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: 1.5px solid rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.85);
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-cta-outline:hover {
+            border-color: rgba(255,255,255,0.6);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* ─── ABOUT preview ─── */
+        .about-preview {
+            background: #0a1a0f;
+        }
+        /* Fix about-preview text visibility */
+        .about-preview .about-statement {
+            color: #f0f8f3;
+        }
+        .about-preview .about-sub {
+            color: #7a9e84;
+        }
+        .about-preview .about-eyebrow {
+            color: #88B291;
+        }
+        .about-preview .about-cta {
+            background: #f0f8f3;
+            color: #0d1f14;
+        }
+        .about-preview .about-cta:hover {
+            background: #88B291;
+            color: #0d1f14;
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 1024px) {
+            .hero-sales-grid { grid-template-columns: 1fr; }
+            .hero-left { padding: 9rem 5% 4rem; min-height: auto; }
+            .hero-right { height: 60vh; }
+            .hero-product-showcase img.main-product { height: 50vh; }
+            .headline-grid, .midea-inner { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-product-cards { grid-template-columns: 1fr; }
+            .coming-soon-grid { grid-template-columns: 1fr 1fr; }
+            .why-features-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 640px) {
+            .hero-left { padding: 8rem 4% 3rem; }
+            .hero-proof-row { gap: 1.5rem; }
+            .hero-ctas { flex-direction: column; }
+            .btn-hero-primary, .btn-hero-outline { width: 100%; justify-content: center; }
+            .headline-stats { grid-template-columns: 1fr 1fr; }
+            .coming-soon-grid { grid-template-columns: 1fr; }
+            .why-features-grid { grid-template-columns: 1fr; }
+            .trust-bar-inner { gap: 1.5rem; }
+            .midea-facts { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
 </head>
+
 <body>
     <!-- Navigation (floating pill) -->
     <div class="nav-pill-wrap">
@@ -21,7 +957,8 @@
                 <ul class="nav-pill-menu">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Products</a></li>                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -30,7 +967,7 @@
                     <span></span>
                 </button>
                 <a href="contact.html" class="nav-pill-cta">
-                    <span>Contact Us</span>
+                    <span>Get a Quote</span>
                     <span class="nav-pill-cta-icon"><i class="fas fa-phone"></i></span>
                 </a>
             </nav>
@@ -40,87 +977,310 @@
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay"></div>
 
-    <!-- Hero Section -->
-    <section class="hero-arkonex">
-        <div class="container hero-arkonex-inner">
-            <div class="hero-grid">
-                <!-- LEFT col: one big yellow card + one small white card below -->
-                <div class="hero-col hero-col-left">
-                    <!-- BIG yellow card: video + headline -->
-                    <div class="hero-card hero-card-yellow hero-card-top">
-                        <div class="hero-media-frame">
-                            <img src="images/water_heater_hero_1781282898250.png" alt="Water heater appliance">
-                            <button class="hero-play-btn" aria-label="Play video">
-                                <i class="fas fa-play"></i>
-                            </button>
-                        </div>
-                        <h1 class="hero-arkonex-title">Warm Water.<br>Warm Homes.</h1>
+    <!-- ═══════════════════════════════════
+         HERO — FULL-SCREEN SALES SECTION
+    ═══════════════════════════════════ -->
+    <section class="hero-sales">
+        <div class="hero-sales-grid">
+            <!-- LEFT: Copy -->
+            <div class="hero-left">
+                <div class="hero-partner-badge">
+                    <img src="images/midea-logo.png" alt="Midea">
+                    <span>Official Midea Partner</span>
+                </div>
+                <h1>
+                    Ethiopia's <span class="accent">#1 Bathroom<br>Water Heating</span><br>Solution.
+                </h1>
+                <p class="hero-tagline">
+                    Trusted by <strong>10,000+ Ethiopian homes</strong>. Powered by <strong>Midea</strong> — the world's largest water heater manufacturer. 20 years of unmatched expertise, right here in Ethiopia.
+                </p>
+                <div class="hero-ctas">
+                    <a href="products.html" class="btn-hero-primary">
+                        <i class="fas fa-fire"></i> Shop Now
+                    </a>
+                    <a href="contact.html" class="btn-hero-outline">
+                        <i class="fas fa-phone"></i> Get a Free Quote
+                    </a>
+                </div>
+                <div class="hero-proof-row">
+                    <div class="hero-proof-item">
+                        <strong>20+</strong>
+                        <span>Years of Excellence</span>
                     </div>
-                    <!-- SMALL white card: desc + buttons -->
-                    <div class="hero-card hero-card-white hero-card-text">
-                        <p class="hero-arkonex-desc">
-                            Tekcon Ethiopia brings world-class water heating solutions to Ethiopian homes and businesses. 
-                            Electric, solar, and gas water heaters — installed by certified technicians, backed by 20 years of expertise.
-                        </p>
-                        <div class="hero-cta-row">
-                            <a href="contact.html" class="hero-btn hero-btn-dark">
-                                <span>Get a Quote</span>
-                                <span class="hero-btn-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
-                            </a>
-                            <a href="products.html" class="hero-btn hero-btn-outline">
-                                <span class="hero-btn-play"><i class="fas fa-play"></i></span>
-                                <span>Browse Products</span>
-                            </a>
-                        </div>
-                        <!-- Circle badge anchored at top-right of the white card -->
-                        <div class="hero-circle" aria-hidden="true">
-                            <div class="hero-circle-rotate">
-                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <path id="circlePath" d="M 100,100 m -82,0 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0"/>
-                                    </defs>
-                                    <text>
-                                        <textPath href="#circlePath" startOffset="0">
-                                            Elevating our skylines . Every single day . Engineering strength .
-                                        </textPath>
-                                    </text>
-                                </svg>
-                            </div>
-                            <div class="hero-circle-core">
-                                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" class="hero-circle-star">
-                                    <path d="M30 0 L33 27 L60 30 L33 33 L30 60 L27 33 L0 30 L27 27 Z" fill="currentColor"/>
-                                </svg>
-                            </div>
-                        </div>
+                    <div class="hero-proof-item">
+                        <strong>10,000+</strong>
+                        <span>Units Installed</span>
+                    </div>
+                    <div class="hero-proof-item">
+                        <strong>#1</strong>
+                        <span>In Ethiopia</span>
+                    </div>
+                    <div class="hero-proof-item">
+                        <strong>99%</strong>
+                        <span>Happy Customers</span>
                     </div>
                 </div>
-
-                <!-- RIGHT: Big image card -->
-                <div class="hero-col hero-col-right">
-                    <div class="hero-card hero-card-trolly">
-                        <img src="images/solar_water_heater_1781282911006.png" alt="Solar water heater installation">
-                        <div class="hero-trolly-stats">
-                            <div class="trolly-stat">
-                                <strong>10,000+</strong>
-                                <span>Units Installed</span>
-                            </div>
-                            <div class="trolly-stat">
-                                <strong>20+</strong>
-                                <span>Years of Expertise</span>
-                            </div>
-                            <div class="trolly-stat">
-                                <strong>99%</strong>
-                                <span>Happy Customers</span>
-                            </div>
-                        </div>
+            </div>
+            <!-- RIGHT: Product visual -->
+            <div class="hero-right">
+                <div class="hero-product-showcase">
+                    <img src="images/cylinder-series-l.png" alt="Midea Cylinder Series L Water Heater" class="main-product">
+                    <div class="hero-product-badge top-right">
+                        <span class="badge-label">Flagship Product</span>
+                        <span class="badge-val">Cylinder Series L</span>
+                        <span class="badge-sub">by Midea</span>
+                    </div>
+                    <div class="hero-product-badge bottom-left">
+                        <span class="badge-label">Certified</span>
+                        <span class="badge-val">CE Certified</span>
+                        <span class="badge-sub">2-Year Warranty</span>
                     </div>
                 </div>
-
-            </div><!-- end hero-grid -->
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Scroll to explore</span>
+            <div class="line"></div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ─── TRUST BAR ─── -->
+    <div class="trust-bar">
+        <div class="trust-bar-inner">
+            <span class="trust-bar-label">Trusted by:</span>
+            <div class="trust-bar-divider"></div>
+            <div class="trust-bar-item">
+                <i class="fas fa-building"></i> Hotels & Businesses
+            </div>
+            <div class="trust-bar-divider"></div>
+            <div class="trust-bar-item">
+                <i class="fas fa-home"></i> Ethiopian Families
+            </div>
+            <div class="trust-bar-divider"></div>
+            <div class="trust-bar-item">
+                <i class="fas fa-city"></i> Real Estate Developers
+            </div>
+            <div class="trust-bar-divider"></div>
+            <img src="images/midea-logo.png" alt="Midea Official Partner" class="trust-bar-logo">
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+         HEADLINE: Why Tekcon is #1
+    ═══════════════════════════════════ -->
+    <section class="headline-section">
+        <div class="container">
+            <div class="headline-grid">
+                <div class="headline-text">
+                    <span class="eyebrow">— The Tekcon Difference —</span>
+                    <h2>
+                        Ethiopia's Most Trusted<br>Water Heating Brand —<br>For Good Reason.
+                    </h2>
+                    <p>
+                        For over 20 years, Tekcon has built its reputation on one promise: delivering the most reliable, energy-efficient, and premium bathroom water heating solutions to every Ethiopian home and business. We don't just sell heaters — we deliver hot water you can count on, every single morning.
+                    </p>
+                    <div class="headline-stats">
+                        <div class="h-stat">
+                            <strong>10,000+</strong>
+                            <span>Homes & Businesses Served</span>
+                        </div>
+                        <div class="h-stat">
+                            <strong>20+</strong>
+                            <span>Years of Market Leadership</span>
+                        </div>
+                        <div class="h-stat">
+                            <strong>#1</strong>
+                            <span>Water Heating Brand in Ethiopia</span>
+                        </div>
+                        <div class="h-stat">
+                            <strong>100%</strong>
+                            <span>Midea Certified Products</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="headline-image-wrap">
+                    <img src="images/midea-awards.png" alt="Midea International Awards and Certifications">
+                    <div class="headline-awards-overlay">
+                        <div class="headline-awards-text">
+                            <span class="awards-label">World-Class Recognition</span>
+                            <h4>Midea — Global Award-Winning Technology</h4>
+                            <p>Good Design Award, Red Dot, iF Design Award, Gold Award & more</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         MAIN PRODUCTS — CYLINDER L & INSTANT DSK45V
+    ═══════════════════════════════════ -->
+    <section class="main-products" id="products">
+        <div class="container">
+            <div class="main-products-header">
+                <div class="section-eyebrow-row">
+                    <span class="section-eyebrow">— Our Flagship Products —</span>
+                    <div class="section-eyebrow-line"></div>
+                </div>
+                <h2>The Products That Make Us<br><span style="color:#88B291;">Ethiopia's #1 Choice</span></h2>
+                <p>Engineered by Midea — the world's largest water heater manufacturer — exclusively distributed in Ethiopia by Tekcon. These are not just water heaters. They are the gold standard.</p>
+            </div>
+
+            <!-- THE TWO MAIN PRODUCTS (Minimal) -->
+            <!-- THE TWO MAIN PRODUCTS (Minimal) -->
+            <div class="minimal-product-grid">
+                <!-- CYLINDER SERIES L -->
+                <div class="minimal-product-item" onclick="window.location.href='products.html'">
+                    <div class="minimal-product-img-wrap">
+                        <img src="images/cylinder-series-l.png" alt="Midea Cylinder Series L Water Heater">
+                    </div>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">Electric Storage — Cylinder Series</span>
+                        <h3 class="minimal-product-name">Cylinder Series L</h3>
+                        <p class="minimal-product-desc">The undisputed king of Ethiopian water heaters. Built for decades of flawless performance.</p>
+                        <span class="minimal-product-cta">View Details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- INSTANT-SOLO DSK45V -->
+                <div class="minimal-product-item" onclick="window.location.href='products.html'">
+                    <div class="minimal-product-img-wrap">
+                        <img src="images/instant-solo-dsk45v.png" alt="Midea Instant-Solo DSK45V Water Heater">
+                    </div>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">Instant Electric — Instant-Solo Series</span>
+                        <h3 class="minimal-product-name">Instant-Solo DSK45V</h3>
+                        <p class="minimal-product-desc">Zero wait. Instant hot water, the moment you need it. Compact and powerful.</p>
+                        <span class="minimal-product-cta">View Details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMING SOON -->
+            <div style="margin-top:1rem; margin-bottom:2rem;">
+                <p style="font-size:0.72rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#3d5447;margin-bottom:1.2rem;">— More Products Coming Soon —</p>
+            </div>
+            <div class="coming-soon-grid">
+                <div class="coming-soon-card">
+                    <div class="cs-badge"><i class="fas fa-clock"></i> Coming Soon</div>
+                    <div class="cs-icon"><i class="fas fa-sun"></i></div>
+                    <h4 class="cs-name">Solar Water Heater Series</h4>
+                    <p class="cs-desc">Harness Ethiopia's abundant sunshine. Zero electricity costs for daily hot water with Midea's solar evacuated-tube technology.</p>
+                </div>
+                <div class="coming-soon-card">
+                    <div class="cs-badge"><i class="fas fa-clock"></i> Coming Soon</div>
+                    <div class="cs-icon"><i class="fas fa-fire"></i></div>
+                    <h4 class="cs-name">Gas Water Heater Series</h4>
+                    <p class="cs-desc">Ideal for areas with unstable electricity. Instant, continuous hot water powered by LPG with Midea's advanced combustion technology.</p>
+                </div>
+                <div class="coming-soon-card">
+                    <div class="cs-badge"><i class="fas fa-clock"></i> Coming Soon</div>
+                    <div class="cs-icon"><i class="fas fa-building"></i></div>
+                    <h4 class="cs-name">Commercial Grade Series</h4>
+                    <p class="cs-desc">Purpose-built for hotels, hospitals, and large facilities. Unlimited hot water at scale — for the most demanding commercial needs.</p>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:3rem;">
+                <a href="products.html" style="display:inline-flex;align-items:center;gap:0.6rem;border:1.5px solid rgba(136,178,145,0.3);color:#88B291;padding:0.9rem 2.2rem;border-radius:50px;font-size:0.9rem;font-weight:700;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='rgba(136,178,145,0.08)'" onmouseout="this.style.background='transparent'">
+                    View Full Product Catalog <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         MIDEA PARTNERSHIP
+    ═══════════════════════════════════ -->
+    <section class="midea-section">
+        <div class="container">
+            <div class="midea-inner">
+                <div class="midea-content">
+                    <span class="eyebrow">— Our Manufacturing Partner —</span>
+                    <div class="midea-logo-big">
+                        <img src="images/midea-logo.png" alt="Midea">
+                        <span class="midea-verified">✓ Official Partner</span>
+                    </div>
+                    <h2>The World's #1 Water Heater Manufacturer. Now in Ethiopia.</h2>
+                    <p>
+                        Every Tekcon product is manufactured by <strong>Midea</strong> — the world's largest and most awarded home appliance company, with over 200 million units sold globally. When you choose Tekcon, you're not just buying a water heater. You're buying <strong>world-class engineering</strong>, backed by Ethiopia's most experienced team.
+                    </p>
+                    <div class="midea-facts">
+                        <div class="midea-fact">
+                            <i class="fas fa-globe"></i>
+                            <strong>200M+ Units Sold</strong>
+                            <span>Globally across 200+ countries</span>
+                        </div>
+                        <div class="midea-fact">
+                            <i class="fas fa-award"></i>
+                            <strong>Multiple Global Awards</strong>
+                            <span>Red Dot, iF Design, Good Design</span>
+                        </div>
+                        <div class="midea-fact">
+                            <i class="fas fa-flask"></i>
+                            <strong>R&D Powerhouse</strong>
+                            <span>100,000+ engineers worldwide</span>
+                        </div>
+                        <div class="midea-fact">
+                            <i class="fas fa-certificate"></i>
+                            <strong>CE & ISO Certified</strong>
+                            <span>International quality standards</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="midea-awards-img">
+                    <img src="images/midea-product-lineup.png" alt="Midea Product Lineup">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         WHY TEKCON
+    ═══════════════════════════════════ -->
+    <section class="why-tekcon-strip">
+        <div class="container">
+            <div class="why-header">
+                <span class="eyebrow">— Why Ethiopians Choose Us —</span>
+                <h2>We Are Simply the Best.<br>Here's Why.</h2>
+                <p>20 years of market leadership don't happen by accident. Tekcon has earned its #1 position through relentless dedication to quality, service, and results.</p>
+            </div>
+            <div class="why-features-grid">
+                <div class="why-feature-card">
+                    <div class="wf-icon"><i class="fas fa-medal"></i></div>
+                    <h4 class="wf-title">World-Class Midea Products</h4>
+                    <p class="wf-desc">Every unit we sell is manufactured by Midea — the global #1 — so you get international quality at Ethiopian service.</p>
+                </div>
+                <div class="why-feature-card">
+                    <div class="wf-icon"><i class="fas fa-history"></i></div>
+                    <h4 class="wf-title">20+ Years of Proven Expertise</h4>
+                    <p class="wf-desc">Founded in 2004, we've grown from a pioneering construction firm to Ethiopia's most trusted water heating specialist. Our experience is unmatched.</p>
+                </div>
+                <div class="why-feature-card">
+                    <div class="wf-icon"><i class="fas fa-tools"></i></div>
+                    <h4 class="wf-title">Professional Installation</h4>
+                    <p class="wf-desc">Our certified technicians install every unit with precision. No guesswork — just flawless performance from day one, guaranteed.</p>
+                </div>
+                <div class="why-feature-card">
+                    <div class="wf-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4 class="wf-title">Industry-Best Warranty</h4>
+                    <p class="wf-desc">2-year manufacturer warranty on electric heaters. We stand firmly behind every product we sell. Your peace of mind is our priority.</p>
+                </div>
+                <div class="why-feature-card">
+                    <div class="wf-icon"><i class="fas fa-headset"></i></div>
+                    <h4 class="wf-title">Unrivalled After-Sales Support</h4>
+                    <p class="wf-desc">Genuine spare parts, maintenance visits, and a dedicated technical helpline. We're with you long after the sale — for life.</p>
+                </div>
+                <div class="why-feature-card">
+                    <div class="wf-icon"><i class="fas fa-leaf"></i></div>
+                    <h4 class="wf-title">Energy-Efficient Solutions</h4>
+                    <p class="wf-desc">Our products are engineered to minimize electricity bills while maximizing hot water output. Smart technology that pays for itself.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section preview -->
     <section class="about-preview">
         <div class="container">
             <div class="about-grid">
@@ -129,148 +1289,15 @@
                 </div>
                 <div class="about-content-col">
                     <h2 class="about-statement">
-                        Since 2004, Tekcon has been Ethiopia’s leader in smart, reliable water heating for residential and commercial spaces.
+                        Started as a construction leader. Became Ethiopia's #1 bathroom water heating company. 20 years of earning your trust.
                     </h2>
                     <p class="about-sub">
-                        From high-rise buildings in Addis Ababa to modern family homes, we ensure every drop is perfectly heated using premium solar, electric, and gas technology.
+                        From high-rise buildings to modern family homes across Ethiopia — Tekcon has been the name behind the hot water. Now, with Midea as our manufacturing partner, we're delivering world-class water heating technology that no one else in Ethiopia can match.
                     </p>
                     <a href="about.html" class="about-cta">
-                        <span>Get Started</span>
+                        <span>Our Full Story</span>
                         <span class="about-cta-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
                     </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Works Section -->
-    <!-- Products Section -->
-    <section class="products-preview" style="padding: 6rem 0; background-color: #f8f9fa;">
-        <div class="container">
-            <div class="products-header" style="text-align: center; margin-bottom: 3.5rem;">
-                <span style="font-size: 0.8rem; font-weight: 700; color: #88B291; letter-spacing: 0.15em; text-transform: uppercase;">— OUR PRODUCTS —</span>
-                <h2 style="font-size: 2.5rem; font-weight: 800; color: #1E4C38; margin-top: 0.5rem; letter-spacing: -0.02em;">Premium Water Heating Solutions</h2>
-                <p style="color: #5a7264; font-size: 1rem; max-width: 600px; margin: 1rem auto 0; line-height: 1.6;">Discover our range of efficient and reliable water heaters designed to provide uninterrupted comfort for your home or business.</p>
-            </div>
-            <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                
-                <!-- Product 1 -->
-                <a href="products.html" class="product-card" style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; text-decoration: none; display: flex; flex-direction: column;">
-                    <div class="product-image-wrap" style="position: relative; padding: 2rem; background: #f0f5f2; display: flex; align-items: center; justify-content: center; height: 280px; overflow: hidden;">
-                        <span style="position: absolute; top: 1rem; left: 1rem; background: #1E4C38; color: #ffffff; font-size: 0.7rem; font-weight: 700; padding: 0.3rem 0.8rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; z-index: 2;">Commercial</span>
-                        <img src="images/commercial_water_heater_1781282932124.png" alt="Commercial Water Heater" style="max-height: 100%; max-width: 100%; object-fit: contain; transition: transform 0.4s ease;">
-                    </div>
-                    <div class="product-info" style="padding: 1.8rem;">
-                        <h3 style="font-size: 1.2rem; font-weight: 700; color: #1a1a1a; margin: 0 0 0.5rem 0;">High-Capacity Commercial Heater</h3>
-                        <p style="font-size: 0.9rem; color: #666; margin: 0 0 1.2rem 0; line-height: 1.5;">Engineered for heavy-duty usage in hotels and large facilities. Robust and energy-efficient.</p>
-                        <div class="product-specs" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                            <span style="font-size: 0.75rem; color: #1E4C38; background: rgba(30,76,56,0.08); padding: 0.3rem 0.6rem; border-radius: 6px; font-weight: 600;"><i class="fas fa-bolt"></i> High Power</span>
-                            <span style="font-size: 0.75rem; color: #1E4C38; background: rgba(30,76,56,0.08); padding: 0.3rem 0.6rem; border-radius: 6px; font-weight: 600;"><i class="fas fa-building"></i> Commercial</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Product 2 -->
-                <a href="products.html" class="product-card" style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; text-decoration: none; display: flex; flex-direction: column;">
-                    <div class="product-image-wrap" style="position: relative; padding: 2rem; background: #f0f5f2; display: flex; align-items: center; justify-content: center; height: 280px; overflow: hidden;">
-                        <span style="position: absolute; top: 1rem; left: 1rem; background: #e05e36; color: #ffffff; font-size: 0.7rem; font-weight: 700; padding: 0.3rem 0.8rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; z-index: 2;">Gas Powered</span>
-                        <img src="images/gas_boiler_1781282920543.png" alt="Gas Boiler" style="max-height: 100%; max-width: 100%; object-fit: contain; transition: transform 0.4s ease;">
-                    </div>
-                    <div class="product-info" style="padding: 1.8rem;">
-                        <h3 style="font-size: 1.2rem; font-weight: 700; color: #1a1a1a; margin: 0 0 0.5rem 0;">Premium Gas Boiler</h3>
-                        <p style="font-size: 0.9rem; color: #666; margin: 0 0 1.2rem 0; line-height: 1.5;">Instant heating capabilities with precise temperature control. Perfect for modern households.</p>
-                        <div class="product-specs" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                            <span style="font-size: 0.75rem; color: #1E4C38; background: rgba(30,76,56,0.08); padding: 0.3rem 0.6rem; border-radius: 6px; font-weight: 600;"><i class="fas fa-fire"></i> Gas Energy</span>
-                            <span style="font-size: 0.75rem; color: #1E4C38; background: rgba(30,76,56,0.08); padding: 0.3rem 0.6rem; border-radius: 6px; font-weight: 600;"><i class="fas fa-thermometer-half"></i> Instant Heat</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Product 3 -->
-                <a href="products.html" class="product-card" style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; text-decoration: none; display: flex; flex-direction: column;">
-                    <div class="product-image-wrap" style="position: relative; padding: 2rem; background: #f0f5f2; display: flex; align-items: center; justify-content: center; height: 280px; overflow: hidden;">
-                        <span style="position: absolute; top: 1rem; left: 1rem; background: #f2a900; color: #ffffff; font-size: 0.7rem; font-weight: 700; padding: 0.3rem 0.8rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; z-index: 2;">Eco-Friendly</span>
-                        <img src="images/solar_water_heater_1781282911006.png" alt="Solar Water Heater" style="max-height: 100%; max-width: 100%; object-fit: contain; transition: transform 0.4s ease;">
-                    </div>
-                    <div class="product-info" style="padding: 1.8rem;">
-                        <h3 style="font-size: 1.2rem; font-weight: 700; color: #1a1a1a; margin: 0 0 0.5rem 0;">Solar Hybrid System</h3>
-                        <p style="font-size: 0.9rem; color: #666; margin: 0 0 1.2rem 0; line-height: 1.5;">Harness the sun's energy for sustainable heating. Features electric backup for cloudy days.</p>
-                        <div class="product-specs" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                            <span style="font-size: 0.75rem; color: #1E4C38; background: rgba(30,76,56,0.08); padding: 0.3rem 0.6rem; border-radius: 6px; font-weight: 600;"><i class="fas fa-sun"></i> Solar Powered</span>
-                            <span style="font-size: 0.75rem; color: #1E4C38; background: rgba(30,76,56,0.08); padding: 0.3rem 0.6rem; border-radius: 6px; font-weight: 600;"><i class="fas fa-leaf"></i> Sustainable</span>
-                        </div>
-                    </div>
-                </a>
-
-            </div>
-            
-            <div style="text-align: center; margin-top: 3.5rem;">
-                <a href="products.html" style="display: inline-flex; align-items: center; gap: 0.6rem; background: #1E4C38; color: white; padding: 0.9rem 2.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: background 0.3s ease;">
-                    View Full Catalog <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <style>
-                .product-card:hover {
-                    transform: translateY(-8px);
-                    box-shadow: 0 20px 40px rgba(30,76,56,0.12) !important;
-                }
-                .product-card:hover img {
-                    transform: scale(1.08);
-                }
-                @media (max-width: 768px) {
-                    .products-grid {
-                        grid-template-columns: 1fr;
-                    }
-                }
-            </style>
-        </div>
-    </section>
-
-    <!-- Featured Project Section -->
-    <section class="featured-project">
-        <div class="container">
-            <div class="featured-header">
-                <div class="featured-header-text">
-                    <span class="featured-eyebrow">— FEATURED PROJECT —</span>
-                    <h2 class="featured-title">Our latest milestone in Addis Ababa</h2>
-                </div>
-                <p class="featured-sub">
-                    A major commercial installation that showcases our commitment to quality engineering, sustainable energy, and reliable heating performance.
-                </p>
-            </div>
-            <article class="featured-card">
-                <img src="images/commercial_water_heater_1781282932124.png" alt="Commercial Water Heater Facility">
-                <div class="featured-overlay">
-                    <div class="featured-tags">
-                        <span class="featured-tag">#Hospitality</span>
-                        <span class="featured-tag">#CommercialHeating</span>
-                        <span class="featured-tag">#HybridSystem</span>
-                    </div>
-                    <h3 class="featured-card-title">Hilton Addis Ababa — Comprehensive Heating Upgrade</h3>
-                    <p class="featured-card-desc">A complete overhaul of the hotel's water heating infrastructure, implementing an energy-efficient hybrid solar and gas system that guarantees uninterrupted hot water for over 300 premium rooms.</p>
-                    <a href="projects.html" class="featured-cta">
-                        <span>View Project</span>
-                        <span class="featured-cta-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
-                    </a>
-                </div>
-            </article>
-            <div class="featured-stats">
-                <div class="featured-stat">
-                    <strong>200+</strong>
-                    <span>Projects Completed</span>
-                </div>
-                <div class="featured-stat">
-                    <strong>15+</strong>
-                    <span>Years of Experience</span>
-                </div>
-                <div class="featured-stat">
-                    <strong>99%</strong>
-                    <span>Happy Clients</span>
-                </div>
-                <div class="featured-stat">
-                    <strong>50+</strong>
-                    <span>Expert Team</span>
                 </div>
             </div>
         </div>
@@ -282,8 +1309,8 @@
             <div class="container">
                 <div class="testimonials-header">
                     <div class="testimonials-header-text">
-                        <span class="testimonials-eyebrow">— TESTIMONIALS —</span>
-                        <h2 class="testimonials-title">What Ethiopian Families Say About Us</h2>
+                        <span class="testimonials-eyebrow">— WHAT OUR CUSTOMERS SAY —</span>
+                        <h2 class="testimonials-title">Real Ethiopians. Real Results.</h2>
                     </div>
                     <div class="testimonials-nav">
                         <button class="testimonials-nav-btn testimonials-nav-btn-prev" aria-label="Previous testimonial">
@@ -295,12 +1322,12 @@
                     </div>
                 </div>
                 <p class="testimonials-sub">
-                    Real customer stories — from Addis Ababa families and businesses who trust Tekcon for reliable hot water every day.
+                    10,000+ satisfied customers across Ethiopia. These are just a few of the stories that make us proud to be #1.
                 </p>
                 <div class="testimonials-carousel">
                     <div class="testimonial-slide active">
                         <div class="testimonial-portrait">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop" alt="Samuel T">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop" alt="Samson T">
                             <div class="testimonial-portrait-info">
                                 <strong>Samson Tekalign</strong>
                                 <span>Homeowner, Bole — Addis Ababa</span>
@@ -308,13 +1335,13 @@
                         </div>
                         <div class="testimonial-quote-area">
                             <div class="testimonial-quote-mark testimonial-quote-open">&ldquo;</div>
-                            <p class="testimonial-quote-text">Getting the Tekcon 50L completely changed how our home runs. We have hot water all morning and evening without any issues — installation was fast and professional. We recommend Tekcon to every family in our neighborhood.</p>
+                            <p class="testimonial-quote-text">Getting the Tekcon Cylinder Series L completely transformed our home. Hot water every morning — no delays, no problems. Installation was done in one day by their professional team. Tekcon is simply the best choice in Ethiopia.</p>
                             <div class="testimonial-quote-mark testimonial-quote-close">&rdquo;</div>
                         </div>
                     </div>
                     <div class="testimonial-slide">
                         <div class="testimonial-portrait">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=750&fit=crop" alt="Sara Mohammed">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=750&fit=crop" alt="Fikirtework A">
                             <div class="testimonial-portrait-info">
                                 <strong>Fikirtework Assefa</strong>
                                 <span>Business Owner, Kirkos — Addis Ababa</span>
@@ -322,13 +1349,13 @@
                         </div>
                         <div class="testimonial-quote-area">
                             <div class="testimonial-quote-mark testimonial-quote-open">&ldquo;</div>
-                             <p class="testimonial-quote-text">Tekcon's team installed our solar water heater at our guesthouse with great professionalism. The system works perfectly even on overcast days, and our electricity bill dropped noticeably within the first month.</p>
-                             <div class="testimonial-quote-mark testimonial-quote-close">&rdquo;</div>
+                            <p class="testimonial-quote-text">We installed Tekcon water heaters across our entire guesthouse. The Midea quality is outstanding. Our guests never complain about hot water — and our electricity bill is lower than ever. Tekcon is the only name I recommend.</p>
+                            <div class="testimonial-quote-mark testimonial-quote-close">&rdquo;</div>
                         </div>
                     </div>
                     <div class="testimonial-slide">
                         <div class="testimonial-portrait">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=750&fit=crop" alt="David Bekele">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=750&fit=crop" alt="Dawit M">
                             <div class="testimonial-portrait-info">
                                 <strong>Dawit Mulugeta</strong>
                                 <span>Apartment Resident, Yeka — Addis Ababa</span>
@@ -336,8 +1363,8 @@
                         </div>
                         <div class="testimonial-quote-area">
                             <div class="testimonial-quote-mark testimonial-quote-open">&ldquo;</div>
-                             <p class="testimonial-quote-text">Tekcon's team installed our solar water heater at our guesthouse with great professionalism. The system works perfectly even on overcast days, and our electricity bill dropped noticeably within the first month.</p>
-                             <div class="testimonial-quote-mark testimonial-quote-close">&rdquo;</div>
+                            <p class="testimonial-quote-text">The Instant-Solo is perfect for my apartment. No tank, no waiting — instant hot water every time. The Tekcon team was fast, professional, and the after-sales support is excellent. I wish I had done this years ago.</p>
+                            <div class="testimonial-quote-mark testimonial-quote-close">&rdquo;</div>
                         </div>
                     </div>
                 </div>
@@ -345,59 +1372,19 @@
         </div>
     </section>
 
-    <!-- Blog Preview Section -->
-    <section class="blog-preview">
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
         <div class="container">
-            <div class="blog-header">
-                <div class="blog-header-text">
-                    <span class="blog-eyebrow">— INSIGHTS & UPDATES —</span>
-                    <h2 class="blog-title">Tips, Guides &amp; Water Heating Insights</h2>
-                </div>
-                    <p class="blog-sub">
-                        From choosing the right water heater to energy-saving tips and installation guides — expert advice from the Tekcon team.
-                    </p>
-            </div>
-            <div class="blog-layout">
-                <article class="blog-featured">
-                    <img src="images/water_heater_hero_1781282898250.png" alt="Water Heater Hero">
-                    <div class="blog-featured-overlay">
-                        <h3 class="blog-featured-title">How to Choose the Right Water Heater for Your Ethiopian Home</h3>
-                        <p class="blog-featured-desc">Capacity, fuel type, installation space — everything you need to know before buying.</p>
-                        <a href="blog.html" class="blog-featured-cta">
-                            <span>Discover more</span>
-                            <span class="blog-featured-cta-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
-                        </a>
-                    </div>
-                </article>
-                <div class="blog-list">
-                    <a href="blog.html" class="blog-list-item">
-                        <div class="blog-list-image">
-                            <img src="images/solar_water_heater_1781282911006.png" alt="Solar Water Heater">
-                        </div>
-                        <div class="blog-list-content">
-                            <h4>Why Solar Water Heaters Are Perfect for Ethiopia's Climate</h4>
-                            <p>Ethiopia's 320+ sunny days a year make solar heating a no-brainer investment.</p>
-                        </div>
-                    </a>
-                    <a href="blog.html" class="blog-list-item">
-                        <div class="blog-list-image">
-                            <img src="images/gas_boiler_1781282920543.png" alt="Gas Boiler">
-                        </div>
-                        <div class="blog-list-content">
-                            <h4>5 Signs Your Water Heater Needs Replacing</h4>
-                            <p>Rust, noise, slow heating — when to repair and when to upgrade your unit.</p>
-                        </div>
-                    </a>
-                    <a href="blog.html" class="blog-list-item">
-                        <div class="blog-list-image">
-                            <img src="images/commercial_water_heater_1781282932124.png" alt="Commercial Water Heater">
-                        </div>
-                        <div class="blog-list-content">
-                            <h4>Gas vs Electric vs Solar: Which Water Heater Wins in Ethiopia?</h4>
-                            <p>A practical comparison to help Ethiopian homeowners make the right choice.</p>
-                        </div>
-                    </a>
-                </div>
+            <span class="eyebrow">— Ready to Upgrade? —</span>
+            <h2>Join 10,000+ Ethiopians Who<br>Choose Tekcon Every Day.</h2>
+            <p>Don't settle for anything less than Ethiopia's #1. Contact us today for a free consultation and the best price on your next water heater.</p>
+            <div class="cta-banner-btns">
+                <a href="contact.html" class="btn-cta-white">
+                    <i class="fas fa-phone"></i> Get a Free Quote
+                </a>
+                <a href="products.html" class="btn-cta-outline">
+                    <i class="fas fa-th-large"></i> Browse All Products
+                </a>
             </div>
         </div>
     </section>
@@ -410,12 +1397,12 @@
                     <img src="images/company-logo.png" alt="TEKCON logo" class="footer-logo-img">
                 </a>
                 <p class="footer-stay-connected">
-                    Ethiopia's trusted water heating solutions partner — hot water for every home, every day.
+                    Ethiopia's #1 bathroom water heating solution — Midea-powered, Tekcon-trusted.
                 </p>
             </div>
 
             <div class="footer-statement-row">
-                <h2 class="footer-statement">Warm homes, happy families — since 2004</h2>
+                <h2 class="footer-statement">The best hot water solution in Ethiopia — since 2004.</h2>
                 <form class="footer-subscribe" onsubmit="event.preventDefault();">
                     <label for="footer-email" class="footer-subscribe-label">Subscribe to Our Updates:</label>
                     <div class="footer-subscribe-field">
@@ -431,35 +1418,28 @@
 
             <div class="footer-nav-row">
                 <nav class="footer-nav">
-                    <a href="about.html">Our Expertise</a>
-                    <a href="projects.html">Featured Projects</a>
+                    <a href="about.html">Our Story</a>
+                    <a href="products.html">Our Products</a>
                     <a href="blog.html">Insights & News</a>
-                    <a href="about.html">Who We Are</a>
+                    <a href="contact.html">Contact Us</a>
                 </nav>
                 <div class="footer-social">
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                    <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
                 </div>
             </div>
 
-            <p class="footer-copyright">© 2025 Tekcon Ethiopia — All rights reserved</p>
+            <p class="footer-copyright">© 2025 Tekcon Ethiopia — All rights reserved | Official Midea Partner</p>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    
-    <!-- Supabase Client -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
-    <!-- Supabase Configuration -->
     <script src="js/supabase-config.js"></script>
-    
-    <!-- Supabase Content Loader -->
     <script src="js/supabase-content-loader.js"></script>
-
-    <!-- AI Chat Widget -->
     <script src="js/ai-chat.js"></script>
 </body>
+
 </html>

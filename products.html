@@ -174,6 +174,106 @@
             line-height:1.65;
         }
 
+        
+        /* Minimal product gallery */
+        .minimal-product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .minimal-product-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+        }
+        .minimal-product-img-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .minimal-product-img-wrap img {
+            max-height: 320px;
+            width: auto;
+            max-width: 85%;
+            object-fit: contain;
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.5)) drop-shadow(0 0 40px rgba(136,178,145,0.08));
+            transition: transform 0.5s cubic-bezier(.22,.68,0,1.1);
+            animation: floatProduct 6s ease-in-out infinite;
+        }
+        .minimal-product-item:nth-child(even) .minimal-product-img-wrap img {
+            animation-delay: -3s;
+        }
+        .minimal-product-item:hover .minimal-product-img-wrap img {
+            transform: translateY(-12px) scale(1.04);
+        }
+        .minimal-product-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .minimal-product-series {
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #88B291;
+        }
+        .minimal-product-name {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #f0f8f3;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+        .minimal-product-desc {
+            font-size: 0.85rem;
+            color: #5a7264;
+            line-height: 1.5;
+            margin: 0;
+            max-width: 340px;
+        }
+        .minimal-product-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+            color: #88B291;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+        .minimal-product-cta:hover {
+            color: #f0f8f3;
+            gap: 0.7rem;
+        }
+        .minimal-product-cta i {
+            font-size: 0.7rem;
+            transition: transform 0.25s;
+        }
+        .minimal-product-item:hover .minimal-product-cta i {
+            transform: translateX(4px);
+        }
+        @keyframes floatProduct {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-18px); }
+        }
+
+        @media (max-width: 1024px) {
+            .minimal-product-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 640px) {
+            .minimal-product-grid { grid-template-columns: 1fr !important; }
+        }
+
         /* ─── Product Grid ──────────────────────────────────────── */
         .prod-grid {
             display:grid;
@@ -516,132 +616,58 @@
                 </div>
             </div>
 
-            <div class="prod-grid">
-
+            <div class="minimal-product-grid">
                 <!-- TK-EWH-010 -->
-                <div class="prod-card">
-                    <div class="prod-img-wrap prod-img-light">
-                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=450&fit=crop" alt="Tekcon ThermoStore 10L">
-                        <span class="prod-badge badge-new">Compact</span>
-                        <span class="prod-model-chip">TK-EWH-010</span>
+                <div class="minimal-product-item" onclick="window.location.href='contact.html'">
+                    <div class="minimal-product-img-wrap">
+                        <img src="images/cylinder-series-l.png" alt="Tekcon ThermoStore 10L">
                     </div>
-                    <div class="prod-body">
-                        <h3 class="prod-name">ThermoStore 10L</h3>
-                        <p class="prod-short-desc">Ideal compact heater for single bathrooms and studio apartments.</p>
-                        <div class="prod-specs">
-                            <span class="spec-pill"><i class="fas fa-tint"></i> 10 L</span>
-                            <span class="spec-pill"><i class="fas fa-bolt"></i> 1.5 kW</span>
-                            <span class="spec-pill"><i class="fas fa-compress-arrows-alt"></i> 8 Bar</span>
-                            <span class="spec-pill"><i class="fas fa-plug"></i> 220V</span>
-                        </div>
-                        <ul class="prod-features">
-                            <li><i class="fas fa-check"></i> Rapid heat-up element</li>
-                            <li><i class="fas fa-check"></i> Anti-corrosion enamel inner tank</li>
-                            <li><i class="fas fa-check"></i> Built-in pressure relief valve</li>
-                            <li><i class="fas fa-check"></i> Energy class A rated</li>
-                        </ul>
-                        <p class="prod-best-for"><i class="fas fa-home"></i> Best for: Single user, small bathroom</p>
-                    </div>
-                    <div class="prod-footer">
-                        <a href="contact.html" class="prod-enquire-btn">
-                            <i class="fas fa-paper-plane"></i> Enquire About This Product
-                        </a>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">Compact • 10L</span>
+                        <h3 class="minimal-product-name">ThermoStore 10L</h3>
+                        <p class="minimal-product-desc">Ideal compact heater for single bathrooms and studio apartments.</p>
+                        <span class="minimal-product-cta">Enquire Now <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
 
                 <!-- TK-EWH-030 -->
-                <div class="prod-card">
-                    <div class="prod-img-wrap prod-img-light">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=450&fit=crop" alt="Tekcon ThermoStore 30L">
-                        <span class="prod-badge badge-popular">Popular</span>
-                        <span class="prod-model-chip">TK-EWH-030</span>
+                <div class="minimal-product-item" onclick="window.location.href='contact.html'">
+                    <div class="minimal-product-img-wrap">
+                        <img src="images/cylinder-series-l.png" alt="Tekcon ThermoStore 30L">
                     </div>
-                    <div class="prod-body">
-                        <h3 class="prod-name">ThermoStore 30L</h3>
-                        <p class="prod-short-desc">The most popular choice for small families and two-person households.</p>
-                        <div class="prod-specs">
-                            <span class="spec-pill"><i class="fas fa-tint"></i> 30 L</span>
-                            <span class="spec-pill"><i class="fas fa-bolt"></i> 2.0 kW</span>
-                            <span class="spec-pill"><i class="fas fa-compress-arrows-alt"></i> 8 Bar</span>
-                            <span class="spec-pill"><i class="fas fa-plug"></i> 220V</span>
-                        </div>
-                        <ul class="prod-features">
-                            <li><i class="fas fa-check"></i> Enamel-coated steel inner tank</li>
-                            <li><i class="fas fa-check"></i> Adjustable thermostat (35–75 °C)</li>
-                            <li><i class="fas fa-check"></i> Automatic thermal cut-off</li>
-                            <li><i class="fas fa-check"></i> Vertical or horizontal installation</li>
-                        </ul>
-                        <p class="prod-best-for"><i class="fas fa-home"></i> Best for: 2–3 users, family bathroom</p>
-                    </div>
-                    <div class="prod-footer">
-                        <a href="contact.html" class="prod-enquire-btn">
-                            <i class="fas fa-paper-plane"></i> Enquire About This Product
-                        </a>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">Popular • 30L</span>
+                        <h3 class="minimal-product-name">ThermoStore 30L</h3>
+                        <p class="minimal-product-desc">The most popular choice for small families and two-person households.</p>
+                        <span class="minimal-product-cta">Enquire Now <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
 
                 <!-- TK-EWH-050 -->
-                <div class="prod-card">
-                    <div class="prod-img-wrap prod-img-light">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=450&fit=crop" alt="Tekcon ThermoStore 50L">
-                        <span class="prod-badge badge-bestseller">Best Seller</span>
-                        <span class="prod-model-chip">TK-EWH-050</span>
+                <div class="minimal-product-item" onclick="window.location.href='contact.html'">
+                    <div class="minimal-product-img-wrap">
+                        <img src="images/cylinder-series-l.png" alt="Tekcon ThermoStore 50L">
                     </div>
-                    <div class="prod-body">
-                        <h3 class="prod-name">ThermoStore 50L</h3>
-                        <p class="prod-short-desc">Our best-selling model — perfect for families of four and multi-bathroom homes.</p>
-                        <div class="prod-specs">
-                            <span class="spec-pill"><i class="fas fa-tint"></i> 50 L</span>
-                            <span class="spec-pill"><i class="fas fa-bolt"></i> 2.0 kW</span>
-                            <span class="spec-pill"><i class="fas fa-compress-arrows-alt"></i> 8 Bar</span>
-                            <span class="spec-pill"><i class="fas fa-plug"></i> 220V</span>
-                        </div>
-                        <ul class="prod-features">
-                            <li><i class="fas fa-check"></i> Digital temperature LED display</li>
-                            <li><i class="fas fa-check"></i> Magnesium anode rod protection</li>
-                            <li><i class="fas fa-check"></i> Child safety lock</li>
-                            <li><i class="fas fa-check"></i> 2-year full manufacturer warranty</li>
-                        </ul>
-                        <p class="prod-best-for"><i class="fas fa-home"></i> Best for: Family of 4–5, two bathrooms</p>
-                    </div>
-                    <div class="prod-footer">
-                        <a href="contact.html" class="prod-enquire-btn">
-                            <i class="fas fa-paper-plane"></i> Enquire About This Product
-                        </a>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">Best Seller • 50L</span>
+                        <h3 class="minimal-product-name">ThermoStore 50L</h3>
+                        <p class="minimal-product-desc">Our best-selling model — perfect for families of four and multi-bathroom homes.</p>
+                        <span class="minimal-product-cta">Enquire Now <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
 
                 <!-- TK-EWH-080 -->
-                <div class="prod-card">
-                    <div class="prod-img-wrap prod-img-light">
-                        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&h=450&fit=crop" alt="Tekcon ThermoStore 80L">
-                        <span class="prod-badge badge-popular">Commercial</span>
-                        <span class="prod-model-chip">TK-EWH-080</span>
+                <div class="minimal-product-item" onclick="window.location.href='contact.html'">
+                    <div class="minimal-product-img-wrap">
+                        <img src="images/commercial_water_heater_1781282932124.png" alt="Tekcon ThermoStore 80L">
                     </div>
-                    <div class="prod-body">
-                        <h3 class="prod-name">ThermoStore 80L</h3>
-                        <p class="prod-short-desc">Heavy-duty storage heater for apartments, guesthouses, and commercial buildings.</p>
-                        <div class="prod-specs">
-                            <span class="spec-pill"><i class="fas fa-tint"></i> 80 L</span>
-                            <span class="spec-pill"><i class="fas fa-bolt"></i> 2.5 kW</span>
-                            <span class="spec-pill"><i class="fas fa-compress-arrows-alt"></i> 8 Bar</span>
-                            <span class="spec-pill"><i class="fas fa-plug"></i> 220V</span>
-                        </div>
-                        <ul class="prod-features">
-                            <li><i class="fas fa-check"></i> Commercial-grade stainless inner tank</li>
-                            <li><i class="fas fa-check"></i> Smart thermostat with 24h timer</li>
-                            <li><i class="fas fa-check"></i> Titanium heating element</li>
-                            <li><i class="fas fa-check"></i> Stainless steel exterior casing</li>
-                        </ul>
-                        <p class="prod-best-for"><i class="fas fa-building"></i> Best for: Guesthouses, apartments, 6+ users</p>
-                    </div>
-                    <div class="prod-footer">
-                        <a href="contact.html" class="prod-enquire-btn">
-                            <i class="fas fa-paper-plane"></i> Enquire About This Product
-                        </a>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">Commercial • 80L</span>
+                        <h3 class="minimal-product-name">ThermoStore 80L</h3>
+                        <p class="minimal-product-desc">Heavy-duty storage heater for apartments, guesthouses, and commercial buildings.</p>
+                        <span class="minimal-product-cta">Enquire Now <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -660,68 +686,32 @@
                 </div>
             </div>
 
-            <div class="prod-grid">
-
+            <div class="minimal-product-grid" style="grid-template-columns:1fr 1fr;">
                 <!-- TK-IWH-035 -->
-                <div class="prod-card">
-                    <div class="prod-img-wrap prod-img-light">
-                        <img src="https://images.unsplash.com/photo-1594550209428-24e5abe4f0e0?w=600&h=450&fit=crop" alt="InstantFlow 3.5kW">
-                        <span class="prod-badge badge-instant">Instant Heat</span>
-                        <span class="prod-model-chip">TK-IWH-035</span>
+                <div class="minimal-product-item" onclick="window.location.href='contact.html'">
+                    <div class="minimal-product-img-wrap">
+                        <img src="images/instant-solo-dsk45v.png" alt="InstantFlow 3.5kW">
                     </div>
-                    <div class="prod-body">
-                        <h3 class="prod-name">InstantFlow 3.5 kW</h3>
-                        <p class="prod-short-desc">Compact tankless heater — ideal for single showers and small apartments.</p>
-                        <div class="prod-specs">
-                            <span class="spec-pill"><i class="fas fa-bolt"></i> 3.5 kW</span>
-                            <span class="spec-pill"><i class="fas fa-water"></i> 4 L/min</span>
-                            <span class="spec-pill"><i class="fas fa-plug"></i> 220V</span>
-                        </div>
-                        <ul class="prod-features">
-                            <li><i class="fas fa-check"></i> Zero wait time — hot water instantly</li>
-                            <li><i class="fas fa-check"></i> Ultra-compact wall-mount design</li>
-                            <li><i class="fas fa-check"></i> Automatic temperature regulation</li>
-                            <li><i class="fas fa-check"></i> Overheat &amp; dry-fire protection</li>
-                        </ul>
-                        <p class="prod-best-for"><i class="fas fa-home"></i> Best for: Single shower, small apartment</p>
-                    </div>
-                    <div class="prod-footer">
-                        <a href="contact.html" class="prod-enquire-btn">
-                            <i class="fas fa-paper-plane"></i> Enquire About This Product
-                        </a>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">Instant Heat • 3.5kW</span>
+                        <h3 class="minimal-product-name">InstantFlow 3.5 kW</h3>
+                        <p class="minimal-product-desc">Compact tankless heater — ideal for single showers and small apartments.</p>
+                        <span class="minimal-product-cta">Enquire Now <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
 
                 <!-- TK-IWH-055 -->
-                <div class="prod-card">
-                    <div class="prod-img-wrap prod-img-light">
-                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=450&fit=crop" alt="InstantFlow 5.5kW">
-                        <span class="prod-badge badge-popular">Popular</span>
-                        <span class="prod-model-chip">TK-IWH-055</span>
+                <div class="minimal-product-item" onclick="window.location.href='contact.html'">
+                    <div class="minimal-product-img-wrap">
+                        <img src="images/instant-solo-dsk45v.png" alt="InstantFlow 5.5kW">
                     </div>
-                    <div class="prod-body">
-                        <h3 class="prod-name">InstantFlow 5.5 kW</h3>
-                        <p class="prod-short-desc">High-flow instant heater suitable for shower plus basin in family use.</p>
-                        <div class="prod-specs">
-                            <span class="spec-pill"><i class="fas fa-bolt"></i> 5.5 kW</span>
-                            <span class="spec-pill"><i class="fas fa-water"></i> 6 L/min</span>
-                            <span class="spec-pill"><i class="fas fa-plug"></i> 220V</span>
-                        </div>
-                        <ul class="prod-features">
-                            <li><i class="fas fa-check"></i> High-flow output for family use</li>
-                            <li><i class="fas fa-check"></i> Digital LED temperature display</li>
-                            <li><i class="fas fa-check"></i> Anti-limescale heating element</li>
-                            <li><i class="fas fa-check"></i> Automatic pressure shut-off valve</li>
-                        </ul>
-                        <p class="prod-best-for"><i class="fas fa-home"></i> Best for: Shower + basin, family use</p>
-                    </div>
-                    <div class="prod-footer">
-                        <a href="contact.html" class="prod-enquire-btn">
-                            <i class="fas fa-paper-plane"></i> Enquire About This Product
-                        </a>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">Popular • 5.5kW</span>
+                        <h3 class="minimal-product-name">InstantFlow 5.5 kW</h3>
+                        <p class="minimal-product-desc">High-flow instant heater suitable for shower plus basin in family use.</p>
+                        <span class="minimal-product-cta">Enquire Now <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -740,68 +730,32 @@
                 </div>
             </div>
 
-            <div class="prod-grid">
-
+            <div class="minimal-product-grid" style="grid-template-columns:1fr 1fr;">
                 <!-- TK-SOL-150 -->
-                <div class="prod-card">
-                    <div class="prod-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&h=450&fit=crop" alt="SolarWarm 150L">
-                        <span class="prod-badge badge-solar">Solar ☀</span>
-                        <span class="prod-model-chip">TK-SOL-150</span>
+                <div class="minimal-product-item" onclick="window.location.href='contact.html'">
+                    <div class="minimal-product-img-wrap">
+                        <img src="images/solar_water_heater_1781282911006.png" alt="SolarWarm 150L">
                     </div>
-                    <div class="prod-body">
-                        <h3 class="prod-name">SolarWarm 150L</h3>
-                        <p class="prod-short-desc">High-efficiency evacuated tube system for villas and family homes.</p>
-                        <div class="prod-specs">
-                            <span class="spec-pill"><i class="fas fa-tint"></i> 150 L</span>
-                            <span class="spec-pill"><i class="fas fa-solar-panel"></i> 15 Tubes</span>
-                            <span class="spec-pill"><i class="fas fa-leaf"></i> Solar</span>
-                        </div>
-                        <ul class="prod-features">
-                            <li><i class="fas fa-check"></i> Evacuated tube collector</li>
-                            <li><i class="fas fa-check"></i> Effective even on cloudy days</li>
-                            <li><i class="fas fa-check"></i> Backup electric element included</li>
-                            <li><i class="fas fa-check"></i> 5-year inner tank warranty</li>
-                        </ul>
-                        <p class="prod-best-for"><i class="fas fa-home"></i> Best for: Villa, family home</p>
-                    </div>
-                    <div class="prod-footer">
-                        <a href="contact.html" class="prod-enquire-btn">
-                            <i class="fas fa-paper-plane"></i> Enquire About This Product
-                        </a>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">Solar • 150L</span>
+                        <h3 class="minimal-product-name">SolarWarm 150L</h3>
+                        <p class="minimal-product-desc">High-efficiency evacuated tube system for villas and family homes.</p>
+                        <span class="minimal-product-cta">Enquire Now <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
 
                 <!-- TK-SOL-200 -->
-                <div class="prod-card">
-                    <div class="prod-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=450&fit=crop" alt="SolarWarm 200L">
-                        <span class="prod-badge badge-solar">Solar ☀</span>
-                        <span class="prod-model-chip">TK-SOL-200</span>
+                <div class="minimal-product-item" onclick="window.location.href='contact.html'">
+                    <div class="minimal-product-img-wrap">
+                        <img src="images/solar_water_heater_1781282911006.png" alt="SolarWarm 200L">
                     </div>
-                    <div class="prod-body">
-                        <h3 class="prod-name">SolarWarm 200L</h3>
-                        <p class="prod-short-desc">Larger-capacity solar system for bigger homes, schools, and small hotels.</p>
-                        <div class="prod-specs">
-                            <span class="spec-pill"><i class="fas fa-tint"></i> 200 L</span>
-                            <span class="spec-pill"><i class="fas fa-solar-panel"></i> 20 Tubes</span>
-                            <span class="spec-pill"><i class="fas fa-leaf"></i> Solar</span>
-                        </div>
-                        <ul class="prod-features">
-                            <li><i class="fas fa-check"></i> High-output for larger households</li>
-                            <li><i class="fas fa-check"></i> Stainless steel inner pressure tank</li>
-                            <li><i class="fas fa-check"></i> Automatic top-up float valve</li>
-                            <li><i class="fas fa-check"></i> Anti-freeze circulation protection</li>
-                        </ul>
-                        <p class="prod-best-for"><i class="fas fa-building"></i> Best for: Large homes, small hotels</p>
-                    </div>
-                    <div class="prod-footer">
-                        <a href="contact.html" class="prod-enquire-btn">
-                            <i class="fas fa-paper-plane"></i> Enquire About This Product
-                        </a>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">Solar • 200L</span>
+                        <h3 class="minimal-product-name">SolarWarm 200L</h3>
+                        <p class="minimal-product-desc">Larger-capacity solar system for bigger homes, schools, and small hotels.</p>
+                        <span class="minimal-product-cta">Enquire Now <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -820,66 +774,32 @@
                 </div>
             </div>
 
-            <div class="prod-grid">
-
+            <div class="minimal-product-grid" style="grid-template-columns:1fr 1fr;">
                 <!-- TK-GAS-006 -->
-                <div class="prod-card">
-                    <div class="prod-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=450&fit=crop" alt="GasFlow 6L">
-                        <span class="prod-badge badge-gas">Gas</span>
-                        <span class="prod-model-chip">TK-GAS-006</span>
+                <div class="minimal-product-item" onclick="window.location.href='contact.html'">
+                    <div class="minimal-product-img-wrap">
+                        <img src="images/gas_boiler_1781282920543.png" alt="GasFlow 6L">
                     </div>
-                    <div class="prod-body">
-                        <h3 class="prod-name">GasFlow 6L/min</h3>
-                        <p class="prod-short-desc">Reliable and affordable gas heater — perfect for homes with LPG.</p>
-                        <div class="prod-specs">
-                            <span class="spec-pill"><i class="fas fa-fire"></i> LPG / Gas</span>
-                            <span class="spec-pill"><i class="fas fa-water"></i> 6 L/min</span>
-                        </div>
-                        <ul class="prod-features">
-                            <li><i class="fas fa-check"></i> Piezo instant ignition</li>
-                            <li><i class="fas fa-check"></i> Flame failure safety device</li>
-                            <li><i class="fas fa-check"></i> Balanced flue — no chimney required</li>
-                            <li><i class="fas fa-check"></i> Simple temperature control knob</li>
-                        </ul>
-                        <p class="prod-best-for"><i class="fas fa-bolt"></i> Best for: Off-grid, unstable power areas</p>
-                    </div>
-                    <div class="prod-footer">
-                        <a href="contact.html" class="prod-enquire-btn">
-                            <i class="fas fa-paper-plane"></i> Enquire About This Product
-                        </a>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">Gas • 6L/min</span>
+                        <h3 class="minimal-product-name">GasFlow 6L/min</h3>
+                        <p class="minimal-product-desc">Reliable and affordable gas heater — perfect for homes with LPG.</p>
+                        <span class="minimal-product-cta">Enquire Now <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
 
                 <!-- TK-GAS-016 -->
-                <div class="prod-card">
-                    <div class="prod-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=450&fit=crop" alt="GasFlow 16L">
-                        <span class="prod-badge badge-gas">Commercial</span>
-                        <span class="prod-model-chip">TK-GAS-016</span>
+                <div class="minimal-product-item" onclick="window.location.href='contact.html'">
+                    <div class="minimal-product-img-wrap">
+                        <img src="images/gas_boiler_1781282920543.png" alt="GasFlow 16L">
                     </div>
-                    <div class="prod-body">
-                        <h3 class="prod-name">GasFlow 16L/min</h3>
-                        <p class="prod-short-desc">High-capacity commercial gas heater for hotels, guesthouses and clinics.</p>
-                        <div class="prod-specs">
-                            <span class="spec-pill"><i class="fas fa-fire"></i> LPG / Gas</span>
-                            <span class="spec-pill"><i class="fas fa-water"></i> 16 L/min</span>
-                        </div>
-                        <ul class="prod-features">
-                            <li><i class="fas fa-check"></i> High-flow continuous output</li>
-                            <li><i class="fas fa-check"></i> Digital temperature control display</li>
-                            <li><i class="fas fa-check"></i> Multiple built-in safety sensors</li>
-                            <li><i class="fas fa-check"></i> Eco-combustion technology</li>
-                        </ul>
-                        <p class="prod-best-for"><i class="fas fa-building"></i> Best for: Hotels, guesthouses, commercial</p>
-                    </div>
-                    <div class="prod-footer">
-                        <a href="contact.html" class="prod-enquire-btn">
-                            <i class="fas fa-paper-plane"></i> Enquire About This Product
-                        </a>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">Gas • 16L/min</span>
+                        <h3 class="minimal-product-name">GasFlow 16L/min</h3>
+                        <p class="minimal-product-desc">High-capacity commercial gas heater for hotels, guesthouses and clinics.</p>
+                        <span class="minimal-product-cta">Enquire Now <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -898,83 +818,42 @@
                 </div>
             </div>
 
-            <div class="prod-grid">
-
-                <div class="prod-card">
-                    <div class="prod-img-wrap acc-icon-card">
-                        <i class="fas fa-shield-alt"></i>
-                        <span class="prod-model-chip">TK-ACC-PRV</span>
+            <div class="minimal-product-grid">
+                <div class="minimal-product-item" onclick="window.location.href='contact.html'">
+                    <div class="minimal-product-img-wrap">
+                        <i class="fas fa-shield-alt" style="font-size: 5rem; color: #88B291; margin-bottom: 2rem;"></i>
                     </div>
-                    <div class="prod-body">
-                        <h3 class="prod-name">Pressure Relief Valve</h3>
-                        <p class="prod-short-desc">Universal safety valve — protects your tank from over-pressure. Fits all Tekcon storage heaters.</p>
-                        <div class="prod-specs">
-                            <span class="spec-pill"><i class="fas fa-compress-arrows-alt"></i> 8 Bar Rated</span>
-                            <span class="spec-pill"><i class="fas fa-link"></i> Universal Fit</span>
-                        </div>
-                        <ul class="prod-features">
-                            <li><i class="fas fa-check"></i> Certified to 8 bar working pressure</li>
-                            <li><i class="fas fa-check"></i> Solid brass corrosion-resistant body</li>
-                            <li><i class="fas fa-check"></i> Fits all Tekcon storage heaters</li>
-                        </ul>
-                    </div>
-                    <div class="prod-footer">
-                        <a href="contact.html" class="prod-enquire-btn">
-                            <i class="fas fa-paper-plane"></i> Order This Part
-                        </a>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">TK-ACC-PRV</span>
+                        <h3 class="minimal-product-name">Pressure Relief Valve</h3>
+                        <p class="minimal-product-desc">Universal safety valve — protects your tank from over-pressure. Fits all Tekcon storage heaters.</p>
+                        <span class="minimal-product-cta">Enquire Now <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
 
-                <div class="prod-card">
-                    <div class="prod-img-wrap acc-icon-card">
-                        <i class="fas fa-magnet"></i>
-                        <span class="prod-model-chip">TK-ACC-ANO</span>
+                <div class="minimal-product-item" onclick="window.location.href='contact.html'">
+                    <div class="minimal-product-img-wrap">
+                        <i class="fas fa-magnet" style="font-size: 5rem; color: #88B291; margin-bottom: 2rem;"></i>
                     </div>
-                    <div class="prod-body">
-                        <h3 class="prod-name">Magnesium Anode Rod</h3>
-                        <p class="prod-short-desc">Sacrificial anode rod that prevents inner tank rust — extends heater lifespan by 5+ years.</p>
-                        <div class="prod-specs">
-                            <span class="spec-pill"><i class="fas fa-leaf"></i> Anti-Rust</span>
-                            <span class="spec-pill"><i class="fas fa-link"></i> Universal</span>
-                        </div>
-                        <ul class="prod-features">
-                            <li><i class="fas fa-check"></i> Extends tank service life by 5+ years</li>
-                            <li><i class="fas fa-check"></i> Prevents corrosion and rust</li>
-                            <li><i class="fas fa-check"></i> Easy DIY or technician replacement</li>
-                        </ul>
-                    </div>
-                    <div class="prod-footer">
-                        <a href="contact.html" class="prod-enquire-btn">
-                            <i class="fas fa-paper-plane"></i> Order This Part
-                        </a>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">TK-ACC-ANO</span>
+                        <h3 class="minimal-product-name">Magnesium Anode Rod</h3>
+                        <p class="minimal-product-desc">Sacrificial anode rod that prevents inner tank rust — extends heater lifespan by 5+ years.</p>
+                        <span class="minimal-product-cta">Enquire Now <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
 
-                <div class="prod-card">
-                    <div class="prod-img-wrap acc-icon-card">
-                        <i class="fas fa-thermometer-half"></i>
-                        <span class="prod-model-chip">TK-ACC-THM</span>
+                <div class="minimal-product-item" onclick="window.location.href='contact.html'">
+                    <div class="minimal-product-img-wrap">
+                        <i class="fas fa-thermometer-half" style="font-size: 5rem; color: #88B291; margin-bottom: 2rem;"></i>
                     </div>
-                    <div class="prod-body">
-                        <h3 class="prod-name">Replacement Thermostat</h3>
-                        <p class="prod-short-desc">OEM-grade thermostat for all Tekcon electric storage heaters.</p>
-                        <div class="prod-specs">
-                            <span class="spec-pill"><i class="fas fa-thermometer-half"></i> 35–75 °C</span>
-                            <span class="spec-pill"><i class="fas fa-link"></i> OEM Grade</span>
-                        </div>
-                        <ul class="prod-features">
-                            <li><i class="fas fa-check"></i> Precise temperature control</li>
-                            <li><i class="fas fa-check"></i> Built-in overheat safety cut-out</li>
-                            <li><i class="fas fa-check"></i> Direct OEM replacement</li>
-                        </ul>
-                    </div>
-                    <div class="prod-footer">
-                        <a href="contact.html" class="prod-enquire-btn">
-                            <i class="fas fa-paper-plane"></i> Order This Part
-                        </a>
+                    <div class="minimal-product-info">
+                        <span class="minimal-product-series">TK-ACC-THM</span>
+                        <h3 class="minimal-product-name">Replacement Thermostat</h3>
+                        <p class="minimal-product-desc">OEM-grade thermostat for all Tekcon electric storage heaters.</p>
+                        <span class="minimal-product-cta">Enquire Now <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
